@@ -1,0 +1,61 @@
+#!/usr/bin/env ruby
+
+$:.unshift(File::join(File::dirname(File::dirname(__FILE__)), "lib"))
+
+require 'rubygems'
+require '../lib/google_translate.rb'
+
+class Translate
+  USAGE= <<-TEXT
+    Usage:
+      translate list                 - displays the list of supported languages
+      translate detect "hello world" - detects language of text
+      translate en:ru "hello world"  - translates from en to ru
+      translate ru "hello world"     - translated from auto-detected language to ru 
+  TEXT
+
+  def initialize
+    @translator = Google::Translator.new
+  end
+
+  def print_languages list, title
+    puts TITLE
+    puts list.join(', ')
+  end
+
+  def run
+    if(ARGV.size == 0)
+      puts USAGE and return
+    end
+
+    case ARGV.shift
+
+    when 'list':
+      hash = @translator.supported_languages
+
+      print_languages hash[:from_languages], "From Languages:"
+      print_languages hash[:to_languages], "To Languages:"
+    when 'detect':
+      language = @translator.detect_language(ARGV.shift)
+
+      puts "Language: #{language.inspect}"
+    when /(..):(..)/
+      from_text = ARGV.join(' ')
+      from = $1
+      to = $2
+
+      puts @translator.translate(from.to_sym, to.to_sym, from_text)
+
+    when /(..)/
+      from_text = ARGV.join(' ')
+
+      from = @translator.detect_language(from_text)['language']
+      to = $1
+
+      puts @translator.translate(from.to_sym, to.to_sym, from_text)
+    end
+
+  end
+end
+
+Translate.new.run

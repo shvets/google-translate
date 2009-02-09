@@ -1,0 +1,14 @@
+= Google-Translate -- Client for Google Translate API
+
+= Installing Google-Translate
+
+== Installing the Gem
+
+    $ sudo gem install google-translate
+
+== Usage
+
+    translate list                 - displays the list of supported languages
+    translate detect "hello world" - detects language of text
+    translate en:ru "hello world"  - translates from en to ru
+    translate ru "hello world"     - translated from auto-detected language to ru 
