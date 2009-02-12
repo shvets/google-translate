@@ -3,7 +3,7 @@
 $:.unshift(File::join(File::dirname(File::dirname(__FILE__)), "lib"))
 
 require 'rubygems'
-require '../lib/google_translate.rb'
+require 'google_translate.rb'
 
 class Translate
   USAGE= <<-TEXT
@@ -19,7 +19,7 @@ class Translate
   end
 
   def print_languages list, title
-    puts TITLE
+    puts USAGE
     puts list.join(', ')
   end
 
