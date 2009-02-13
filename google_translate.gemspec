@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{google_translate}
-  s.version = "0.5.3"
+  s.version = "0.5.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
  
