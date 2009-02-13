@@ -38,7 +38,7 @@ module Google
 
         to_text = response[:response_data]['translatedText']
 
-        to_text = encode_text(to_text) if to == :ru
+#        to_text = encode_text(to_text) if to == :ru
 
         (options[:html]) ? CGI.unescapeHTML(to_text) : to_text
       rescue OpenURI::HTTPError

@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.description = %q{Simple client for Google Translate API.}
   s.email = %q{alexander.shvets@gmail.com}
 
-  s.files = ["CHANGES", "google_translate.gemspec", "Rakefile", "README", "lib/google_translate.rb ", 
+  s.files = ["CHANGES", "google_translate.gemspec", "Rakefile", "README", "lib/google_translate.rb", 
              "bin/translate", "bin/translate.bat", "spec/spec_helper.rb" , "spec/translate_spec.rb"]
 
   s.has_rdoc = false

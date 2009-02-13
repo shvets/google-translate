@@ -3,7 +3,7 @@
 $:.unshift(File::join(File::dirname(File::dirname(__FILE__)), "lib"))
 
 require 'rubygems'
-require 'google_translate.rb'
+require 'google_translate'
 
 class Translate
   USAGE= <<-TEXT
@@ -21,6 +21,15 @@ class Translate
   def print_languages list, title
     puts USAGE
     puts list.join(', ')
+  end
+
+  def display text
+    if RUBY_PLATFORM =~ /mswin32/
+      File.open("temp.txt", "w") {|f| f.write text }
+      %x[notepad temp.txt] 
+    else
+      puts text
+    end
   end
 
   def run
@@ -44,17 +53,15 @@ class Translate
       from = $1
       to = $2
 
-      puts @translator.translate(from.to_sym, to.to_sym, from_text)
-
+      display(@translator.translate(from.to_sym, to.to_sym, from_text))
     when /(..)/
       from_text = ARGV.join(' ')
 
       from = @translator.detect_language(from_text)['language']
       to = $1
 
-      puts @translator.translate(from.to_sym, to.to_sym, from_text)
+      display(@translator.translate(from.to_sym, to.to_sym, from_text))
     end
-
   end
 end
 
