@@ -10,5 +10,7 @@
 
     translate list                 - displays the list of supported languages
     translate detect "hello world" - detects language of text
-    translate en:ru "hello world"  - translates from en to ru
-    translate ru "hello world"     - translated from auto-detected language to ru 
+    translate en:ru "hello world"  - or
+    translate en:ru hello world    - translates from en to ru
+    translate ru "hello world"     - or 
+    translate ru hello world       - translated from auto-detected language to ru 

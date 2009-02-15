@@ -1,4 +1,4 @@
-# Rakefile for Scriptlandia-R
+# Rakefile for google_translate
 
 require 'rubygems'
 require 'rake/gempackagetask'
@@ -7,7 +7,9 @@ require 'spec/rake/spectask'
 require 'rake/rdoctask'
 require 'rcov/rcovtask'
 
-SPEC = Gem::Specification.load('google_translate.gemspec')
+spec_name = 'google_translate.gemspec'
+
+SPEC = Gem::Specification.load(spec_name)
 
 Rake::GemPackageTask.new(SPEC) do |pkg| 
   pkg.need_tar = true 
@@ -39,7 +41,7 @@ task :"github:validate" do
   require 'yaml'
    
   require 'rubygems/specification'
-  data = File.read("google_translate.gemspec")
+  data = File.read(spec_name)
   spec = nil
    
   if data !~ %r{!ruby/object:Gem::Specification}

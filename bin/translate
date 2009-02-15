@@ -5,6 +5,8 @@ $:.unshift(File::join(File::dirname(File::dirname(__FILE__)), "lib"))
 require 'rubygems'
 require 'google_translate'
 
+$KCODE='u'
+
 class Translate
   USAGE= <<-TEXT
     Usage:
