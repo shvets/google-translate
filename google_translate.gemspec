@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{google_translate}
-  s.version = "0.5.5"
+  s.version = "0.5.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
  
@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.files = ["CHANGES", "google_translate.gemspec", "Rakefile", "README", "lib/google_translate.rb", 
              "bin/translate", "bin/translate.bat", "spec/spec_helper.rb" , "spec/translate_spec.rb"]
 
-  s.has_rdoc = false
+  s.has_rdoc = true
   s.homepage = %q{http://github.com/shvets/google_translate}
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{google_translate}

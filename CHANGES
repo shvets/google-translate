@@ -1,7 +1,10 @@
 
 = Google-Translate Changelog
 
-== Version 0.0.1
+== Version 0.5.5
 
 * Initial release.
 
+== Version 0.5.6
+
+* Adding support for ruby 1.9.x

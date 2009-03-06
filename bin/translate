@@ -2,10 +2,10 @@
 
 $:.unshift(File::join(File::dirname(File::dirname(__FILE__)), "lib"))
 
-require 'rubygems'
+require 'rubygems' unless RUBY_VERSION =~ /1.9.*/
 require 'google_translate'
 
-$KCODE='u'
+#$KCODE='u'
 
 class Translate
   USAGE= <<-TEXT
@@ -41,22 +41,22 @@ class Translate
 
     case ARGV.shift
 
-    when 'list':
+    when 'list' then
       hash = @translator.supported_languages
 
       print_languages hash[:from_languages], "From Languages:"
       print_languages hash[:to_languages], "To Languages:"
-    when 'detect':
+    when 'detect' then
       language = @translator.detect_language(ARGV.shift)
 
       puts "Language: #{language.inspect}"
-    when /(..):(..)/
+    when /(..):(..)/ then
       from_text = ARGV.join(' ')
       from = $1
       to = $2
 
       display(@translator.translate(from.to_sym, to.to_sym, from_text))
-    when /(..)/
+    when /(..)/ then
       from_text = ARGV.join(' ')
 
       from = @translator.detect_language(from_text)['language']
