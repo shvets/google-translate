@@ -21,7 +21,7 @@ class Translate
   end
 
   def print_languages list, title
-    puts USAGE
+    puts title
     puts list.join(', ')
   end
 

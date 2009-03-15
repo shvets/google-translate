@@ -8,3 +8,7 @@
 == Version 0.5.6
 
 * Adding support for ruby 1.9.x
+
+== Version 0.5.7
+
+* Removing text duplication for help

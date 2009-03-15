@@ -36,6 +36,12 @@ Rcov::RcovTask.new do |task|
   task.verbose = true
 end
 
+desc "Run gem code locally"
+task :"run:gem" do
+  command = "bin/translate " + ENV['params']
+  puts ruby "#{command}"
+end
+
 desc "test gem compatibility with github"
 task :"github:validate" do
   require 'yaml'
