@@ -44,7 +44,7 @@ module Google
     end
     
     it "should return unreliable flag if language is not recognized" do
-      @translator.detect_language("azafretmkldt")['isReliable'].should be false
+      @translator.detect_language("azafretmkldt")['isReliable'].should be_false
     end
 
     it "should return list of supportd languages" do

@@ -19,35 +19,41 @@ module Google
   end
 
   class Translator
+    class MissingFromLanguage < Exception; end
+    class MissingToLanguage < Exception; end
+    class MissingTextLanguage < Exception; end
+    class TranslateServerIsDown < Exception; end
+    class InvalidResponse < Exception; end
+    class MissingText < Exception; end
+    class MissingTestText < MissingText; end
+    
     URL_STRING = "http://ajax.googleapis.com/ajax/services/language/"
     URL2_STRING = "http://translate.google.com"
 
     def translate(from, to, from_text, options={})
-      raise Exception.new :missing_from_language if from.nil?
-      raise Exception.new :missing_to_language if to.nil?
-      raise Exception.new :missing_text if from_text.nil?
+      raise(MissingFromLanguage) if from.nil?
+      raise(MissingToLanguage) if to.nil?
+      raise(MissingTextLanguage) if from_text.nil?
 
       request = URL_STRING + "translate?v=1.0&langpair=#{from}%7C#{to}&q=" + CGI.escape(from_text) 
       
       begin
         response = call_service(request, [:response_status, :response_details, :response_data])
 
-        raise Exception.new :translate_server_is_down if response.empty?
+        raise(TranslateServerIsDown) if response.empty?
 
-        raise Exception.new response[:response_details] if response[:response_status] != 200 # success
+        raise(InvalidResponse, response[:response_details]) if response[:response_status] != 200 # success
 
         to_text = response[:response_data]['translatedText']
 
-#        to_text = encode_text(to_text) if to == :ru
-
         (options[:html]) ? CGI.unescapeHTML(to_text) : to_text
       rescue OpenURI::HTTPError
-        raise Exception.new :translate_server_is_down
+        raise(TranslateServerIsDown)
       end
     end
 
-    def detect_language test_text
-      raise Exception.new :missing_test_text if test_text.nil?
+    def detect_language(test_text)
+      raise(MissingTestText) if test_text.nil?
 
       request = URL_STRING + "detect?v=1.0&q=" + CGI.escape(test_text) 
 
@@ -55,13 +61,11 @@ module Google
         response = call_service(request, [:response_data]) 
         response_data = response[:response_data]
 
-        raise Exception.new :translate_server_is_down if response.empty?
-        #raise Exception.new :unreliable_detection if !response_data['isReliable']
+        raise(TranslateServerIsDown) if response.empty?
 
         response_data
-      #
       rescue OpenURI::HTTPError
-        raise Exception.new :translate_server_is_down
+        raise(TranslateServerIsDown)
       end
     end
   
