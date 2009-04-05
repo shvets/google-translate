@@ -12,3 +12,8 @@
 == Version 0.5.7
 
 * Removing text duplication from help
+
+== Version 0.5.8
+
+* Merging changes from bragi: removing warnings, adding exceptions
+
