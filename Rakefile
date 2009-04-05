@@ -39,7 +39,7 @@ end
 desc "Run gem code locally"
 task :"run:gem" do
   command = "bin/translate " + ENV['params']
-  puts ruby "#{command}"
+  puts ruby("#{command}")
 end
 
 desc "test gem compatibility with github"
