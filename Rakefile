@@ -12,8 +12,8 @@ spec_name = 'google_translate.gemspec'
 SPEC = Gem::Specification.load(spec_name)
 
 Rake::GemPackageTask.new(SPEC) do |pkg| 
-  pkg.need_tar = true 
-  pkg.need_zip = true
+  #pkg.need_tar = true 
+  #pkg.need_zip = true
 end 
 
 Spec::Rake::SpecTask.new do |task|

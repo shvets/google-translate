@@ -17,3 +17,6 @@
 
 * Merging changes from bragi: removing warnings, adding exceptions
 
+== Version 0.5.9
+
+* Adding alias: "t" for "translate" command

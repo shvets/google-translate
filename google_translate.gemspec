@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{google_translate}
-  s.version = "0.5.8"
+  s.version = "0.5.9"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
  
@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
     s.specification_version = 2
   end
 
-  s.executables = ['translate']
+  s.executables = ['translate', 't']
   s.platform = Gem::Platform::RUBY
   s.requirements = ["none"]
   s.bindir = "bin"
