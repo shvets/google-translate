@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{google_translate}
-  s.version = "0.5.9"
+  s.version = "0.6.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
  
@@ -29,4 +29,6 @@ Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
   s.requirements = ["none"]
   s.bindir = "bin"
+
+  spec.add_dependency("json", ">= 1.1.4")
 end
