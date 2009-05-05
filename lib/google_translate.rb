@@ -5,28 +5,21 @@ require 'cgi'
 require 'json'
 
 module Google
-  class Language
-    attr_reader :name, :code
-
-    def initialize(name, code)
-      @name = name
-      @code = code
-    end
-
+  Language = Struct.new(:name, :code) do
     def to_s
-      "(" + @code + ": " + @name + ")"
+      "(" + code + ": " + name + ")"
     end
   end
 
   class Translator
-    class MissingFromLanguage < Exception; end
-    class MissingToLanguage < Exception; end
-    class MissingTextLanguage < Exception; end
-    class TranslateServerIsDown < Exception; end
-    class InvalidResponse < Exception; end
-    class MissingText < Exception; end
-    class MissingTestText < MissingText; end
-    
+    def self.Exception(*names)
+      cl = Module === self ? self : Object
+      names.each {|n| cl.const_set(n, Class.new(Exception))}
+    end
+
+    Exception :MissingFromLanguage, :MissingToLanguage, :MissingTextLanguage,
+              :TranslateServerIsDown, :InvalidResponse, :MissingText, :MissingTestText
+
     URL_STRING = "http://ajax.googleapis.com/ajax/services/language/"
     URL2_STRING = "http://translate.google.com"
 
@@ -134,23 +127,6 @@ module Google
       end
 
       languages
-    end
-
-    def encode_text text
-      s = ''
-      text.unpack("U*").each do |ch|
-        if (1072..1087).include? ch
-          s << (ch-912).chr
-        elsif (1088..1103).include? ch
-          s << (ch-864).chr
-        elsif (1020..1071).include? ch
-          s << (ch-892).chr
-        else
-          s << ch
-        end
-      end
-
-      s
     end
   end
 

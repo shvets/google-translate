@@ -8,6 +8,7 @@ require 'google_translate'
 #$KCODE='u'
 
 class Translate
+
   USAGE= <<-TEXT
     Usage:
       translate list                 - displays the list of supported languages
@@ -62,7 +63,11 @@ class Translate
       from = @translator.detect_language(from_text)['language']
       to = $1
 
-      display(@translator.translate(from.to_sym, to.to_sym, from_text))
+      begin
+        display(@translator.translate(from.to_sym, to.to_sym, from_text))
+      rescue Exception => e
+        puts "Error: " + e.message
+      end
     end
   end
 end
