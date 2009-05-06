@@ -30,5 +30,5 @@ Gem::Specification.new do |s|
   s.requirements = ["none"]
   s.bindir = "bin"
 
-  spec.add_dependency("json_pure", ">= 1.1.4")
+  s.add_dependency("json_pure", ">= 1.1.4")
 end
