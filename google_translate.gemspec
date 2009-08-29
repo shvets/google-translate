@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/shvets/google_translate}
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{google_translate}
-  s.rubygems_version = %q{1.3.1}
+  s.rubygems_version = %q{1.3.2}
   s.summary = %q{Simple client for Google Translate API.}
 
   if s.respond_to? :specification_version then
