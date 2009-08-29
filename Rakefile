@@ -38,7 +38,7 @@ end
 
 desc "Run gem code locally"
 task :"run:gem" do
-  command = "bin/translate " + ENV['params']
+  command = "bin/translate " + (ENV['params'].nil? ? '' : ENV['params'])
   puts ruby("#{command}")
 end
 
@@ -61,5 +61,6 @@ task :"github:validate" do
   puts spec
   puts "OK"
 end
+
 
 task :default => :rcov

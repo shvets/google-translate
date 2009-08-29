@@ -115,8 +115,8 @@ module Google
       quote = '(\s|\'|")?'
       text = '(.*)'
 
-      re1 = /<select#{spaces}name=#{quote}#{tag_name}#{quote}#{spaces}id=#{quote}#{tag_id}#{quote}#{spaces}tabindex=0>(.*)<\/select>/
-      text = re1.match(buffer)[5]
+      re1 = /<select#{spaces}name=#{quote}#{tag_name}#{quote}#{spaces}id=#{quote}#{tag_id}#{quote}#{spaces}tabindex=#{spaces}#{quote}0#{quote}#{spaces}>(.*)<\/select>/
+      text = re1.match(buffer)[7]
 
       re2 = /<option(\s*)value="([a-z|A-Z]*)">([a-z|A-Z]*)<\/option>/
 

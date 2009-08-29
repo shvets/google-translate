@@ -24,3 +24,7 @@
 == Version 0.6.1
 
 * Adding error handling
+
+== Version 0.6.2
+
+* Reflecting changes in how google returns supported languages list
