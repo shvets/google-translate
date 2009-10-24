@@ -1,0 +1,12 @@
+:source: http://gems.rubyforge.org
+ 
+:gems:
+  - :name: gemcutter
+    :version: 0.1.6
+  
+  - :name: rspec
+    :version: 1.2.9
+  
+  - :name: rcov
+    :version: 0.9.6
+    

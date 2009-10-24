@@ -28,3 +28,7 @@
 == Version 0.6.2
 
 * Reflecting changes in how google returns supported languages list
+
+== Version 0.6.3
+
+* Deploy on gemcutter
