@@ -3,8 +3,8 @@
 = Installing Google-Translate
 
 == Installing the Gem
-    $ sudo gem sources -a http://gems.github.com
-    $ sudo gem install shvets-google_translate
+    $ sudo gem sources -a http://gemcutter.org
+    $ sudo gem install google-translate
 
 == Usage
 
