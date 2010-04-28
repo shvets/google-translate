@@ -98,8 +98,8 @@ module Google
       open(URI.escape(request)) do |stream|
         content = stream.read
 
-        from_languages = collect_languages content, 'sl', 'old_sl'
-        to_languages = collect_languages content, 'tl', 'old_tl'
+        from_languages = collect_languages content, 'sllangdropdown', 'sl', 'old_sl'
+        to_languages = collect_languages content, 'tllangdropdown', 'tl', 'old_tl'
 
         response[:from_languages] = from_languages
         response[:to_languages] = to_languages
@@ -107,16 +107,30 @@ module Google
 
       response
     end
+  #buffer.split( %r{(</?select class=sllangdropdown name=sl id=\"old_sl\"(.*)>)} ).delete_if{|x| x.empty? }
 
-    def collect_languages buffer, tag_name, tag_id
+    # buffer.split(%r{<select#{spaces}class#{spaces}=#{spaces}#{quote}sllangdropdown#{quote}#{spaces}name#{spaces}=#{spaces}#{quote}sl#{quote}#{spaces}id#{spaces}=#{spaces}#{quote}old_sl#{quote}#{spaces}tabindex#{spaces}=#{spaces}#{quote}0#{quote}#{spaces}>(.*)?</select>}).delete_if{|x| x.strip.empty? }
+    # buffer.split(%r{<select#{spaces}class#{spaces}=#{spaces}#{quote}tllangdropdown#{quote}#{spaces}name#{spaces}=#{spaces}#{quote}tl#{quote}#{spaces}id#{spaces}=#{spaces}#{quote}old_tl#{quote}#{spaces}tabindex#{spaces}=#{spaces}#{quote}0#{quote}#{spaces}>(.*)?</select>}).delete_if{|x| x.strip.empty? }
+
+   #                        <td><select class=tllangdropdown name=tl id="old_tl" tabindex=0>
+    # buffer.index()
+    def collect_languages buffer, class_name, tag_name, tag_id
       languages = []
 
       spaces = '\s?'
       quote = '(\s|\'|")?'
       text = '(.*)'
 
-      re1 = /<select#{spaces}name=#{quote}#{tag_name}#{quote}#{spaces}id=#{quote}#{tag_id}#{quote}#{spaces}tabindex=#{spaces}#{quote}0#{quote}#{spaces}>(.*)<\/select>/
-      text = re1.match(buffer)[7]
+#      re1 = /<select#{spaces}name=#{quote}#{tag_name}#{quote}#{spaces}id=#{quote}#{tag_id}#{quote}#{spaces}tabindex=#{spaces}#{quote}0#{quote}#{spaces}>(.*)<\/select>/
+#      text = re1.match(buffer)[7]
+
+      class_part = "class#{spaces}=#{spaces}#{quote}#{class_name}#{quote}"
+      name_part = "name#{spaces}=#{spaces}#{quote}#{tag_name}#{quote}"
+      id_part = "id#{spaces}=#{spaces}#{quote}old_sl#{quote}"
+      tabindex_part = "tabindex#{spaces}=#{spaces}#{quote}0#{quote}"
+
+      re1 = buffer.split(%r{<select#{spaces}#{class_part}#{spaces}#{name_part}#{spaces}#{id_part}#{spaces}#{tabindex_part}#{spaces}>(.*)?</select>}).select{|x| x =~ %r{<option} }
+      text = re1[0]
 
       re2 = /<option(\s*)value="([a-z|A-Z]*)">([a-z|A-Z]*)<\/option>/
 

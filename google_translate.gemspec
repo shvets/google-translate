@@ -2,12 +2,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{google-translate}
-  s.version = "0.6.4"
+  s.version = "0.6.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
  
   s.authors = ["Alexander Shvets"]
-  s.date = %q{2009-01-21}
+  s.date = %q{2010-04-28}
   s.description = %q{Simple client for Google Translate API.}
   s.email = %q{alexander.shvets@gmail.com}
 
@@ -15,10 +15,10 @@ Gem::Specification.new do |s|
              "bin/translate", "bin/translate.bat", "spec/spec_helper.rb" , "spec/translate_spec.rb"]
 
   s.has_rdoc = true
-  s.homepage = %q{http://github.com/shvets/google_translate}
+  s.homepage = %q{http://github.com/shvets/google-translate}
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{google_translate}
-  s.rubygems_version = %q{1.3.2}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{Simple client for Google Translate API.}
 
   if s.respond_to? :specification_version then

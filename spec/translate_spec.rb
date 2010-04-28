@@ -47,7 +47,7 @@ module Google
       @translator.detect_language("azafretmkldt")['isReliable'].should be_false
     end
 
-    it "should return list of supportd languages" do
+    it "should return list of supported languages" do
       languages = @translator.supported_languages
 
       languages[:from_languages].size.should > 0
