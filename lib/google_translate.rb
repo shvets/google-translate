@@ -107,22 +107,12 @@ module Google
 
       response
     end
-  #buffer.split( %r{(</?select class=sllangdropdown name=sl id=\"old_sl\"(.*)>)} ).delete_if{|x| x.empty? }
 
-    # buffer.split(%r{<select#{spaces}class#{spaces}=#{spaces}#{quote}sllangdropdown#{quote}#{spaces}name#{spaces}=#{spaces}#{quote}sl#{quote}#{spaces}id#{spaces}=#{spaces}#{quote}old_sl#{quote}#{spaces}tabindex#{spaces}=#{spaces}#{quote}0#{quote}#{spaces}>(.*)?</select>}).delete_if{|x| x.strip.empty? }
-    # buffer.split(%r{<select#{spaces}class#{spaces}=#{spaces}#{quote}tllangdropdown#{quote}#{spaces}name#{spaces}=#{spaces}#{quote}tl#{quote}#{spaces}id#{spaces}=#{spaces}#{quote}old_tl#{quote}#{spaces}tabindex#{spaces}=#{spaces}#{quote}0#{quote}#{spaces}>(.*)?</select>}).delete_if{|x| x.strip.empty? }
-
-   #                        <td><select class=tllangdropdown name=tl id="old_tl" tabindex=0>
-    # buffer.index()
     def collect_languages buffer, class_name, tag_name, tag_id
       languages = []
 
       spaces = '\s?'
       quote = '(\s|\'|")?'
-      text = '(.*)'
-
-#      re1 = /<select#{spaces}name=#{quote}#{tag_name}#{quote}#{spaces}id=#{quote}#{tag_id}#{quote}#{spaces}tabindex=#{spaces}#{quote}0#{quote}#{spaces}>(.*)<\/select>/
-#      text = re1.match(buffer)[7]
 
       class_part = "class#{spaces}=#{spaces}#{quote}#{class_name}#{quote}"
       name_part = "name#{spaces}=#{spaces}#{quote}#{tag_name}#{quote}"
