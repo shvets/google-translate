@@ -1,4 +1,4 @@
-# Rakefile for google_translate
+# Rakefile for google-translate
 
 require 'rubygems'
 require 'rake/gempackagetask'
@@ -7,14 +7,14 @@ require 'spec/rake/spectask'
 require 'rake/rdoctask'
 require 'rcov/rcovtask'
 
-spec_name = 'google_translate.gemspec'
+# spec_name = 'google_translate.gemspec'
+# 
+# SPEC = Gem::Specification.load(spec_name)
 
-SPEC = Gem::Specification.load(spec_name)
-
-Rake::GemPackageTask.new(SPEC) do |pkg| 
-  #pkg.need_tar = true 
-  #pkg.need_zip = true
-end 
+# Rake::GemPackageTask.new(SPEC) do |pkg| 
+#   #pkg.need_tar = true 
+#   #pkg.need_zip = true
+# end 
 
 Spec::Rake::SpecTask.new do |task|
   task.libs << 'lib'
@@ -45,7 +45,7 @@ begin
     gemspec.email = "alexander.shvets@gmail.com"
     gemspec.homepage = "http://github.com/shvets/google-translate"
     gemspec.authors = ["Alexander Shvets"]
-    gemspec.files = FileList["CHANGES", "google_translate.gemspec", "Rakefile", "README", "VERSION",
+    gemspec.files = FileList["CHANGES", "google-translate.gemspec", "Rakefile", "README", "VERSION",
                              "lib/**/*", "bin/**/*"]
     gemspec.add_dependency "json_pure", ">= 1.1.4"   
 
