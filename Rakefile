@@ -36,31 +36,53 @@ Rcov::RcovTask.new do |task|
   task.verbose = true
 end
 
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gemspec|
+    gemspec.name = "google-translate"
+    gemspec.summary = "Simple client for Google Translate API."
+    gemspec.description = "Simple client for Google Translate API."
+    gemspec.email = "alexander.shvets@gmail.com"
+    gemspec.homepage = "http://github.com/shvets/google-translate"
+    gemspec.authors = ["Alexander Shvets"]
+    gemspec.files = FileList["CHANGES", "google_translate.gemspec", "Rakefile", "README", "VERSION",
+                             "lib/**/*", "bin/**/*"]
+    gemspec.add_dependency "json_pure", ">= 1.1.4"   
+
+    gemspec.executables = ['translate', 't']
+    gemspec.requirements = ["none"]
+    gemspec.bindir = "bin"    
+  end
+  Jeweler::GemcutterTasks.new
+rescue LoadError
+  puts "Jeweler not available. Install it with: sudo gem install technicalsteaks-jeweler -s http://gems.github.com"
+end
+
 desc "Run gem code locally"
 task :"run:gem" do
   command = "bin/translate " + (ENV['params'].nil? ? '' : ENV['params'])
   puts ruby("#{command}")
 end
 
-desc "test gem compatibility with github"
-task :"github:validate" do
-  require 'yaml'
-   
-  require 'rubygems/specification'
-  data = File.read(spec_name)
-  spec = nil
-   
-  if data !~ %r{!ruby/object:Gem::Specification}
-    Thread.new { spec = eval("$SAFE = 3\n#{data}") }.join
-  else
-    spec = YAML.load(data)
-  end
-   
-  spec.validate
-   
-  puts spec
-  puts "OK"
-end
+# desc "test gem compatibility with github"
+# task :"github:validate" do
+#   require 'yaml'
+#    
+#   require 'rubygems/specification'
+#   data = File.read(spec_name)
+#   spec = nil
+#    
+#   if data !~ %r{!ruby/object:Gem::Specification}
+#     Thread.new { spec = eval("$SAFE = 3\n#{data}") }.join
+#   else
+#     spec = YAML.load(data)
+#   end
+#    
+#   spec.validate
+#    
+#   puts spec
+#   puts "OK"
+# end
 
 task :default => :package
 
