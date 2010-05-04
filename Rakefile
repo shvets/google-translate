@@ -40,7 +40,7 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gemspec|
     gemspec.name = "google-translate"
-    gemspec.summary = "Simple client for Google Translate API."
+    gemspec.summary = "Simple client for Google Translate API (Summary)."
     gemspec.description = "Simple client for Google Translate API."
     gemspec.email = "alexander.shvets@gmail.com"
     gemspec.homepage = "http://github.com/shvets/google-translate"

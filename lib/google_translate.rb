@@ -98,8 +98,8 @@ module Google
       open(URI.escape(request)) do |stream|
         content = stream.read
 
-        from_languages = collect_languages content, 'sllangdropdown', 'sl', 'old_sl'
-        to_languages = collect_languages content, 'tllangdropdown', 'tl', 'old_tl'
+        from_languages = collect_languages content, 0, 'sllangdropdown', 'sl', 'old_sl'
+        to_languages = collect_languages content, 1, 'tllangdropdown', 'tl', 'old_tl'
 
         response[:from_languages] = from_languages
         response[:to_languages] = to_languages
@@ -108,7 +108,7 @@ module Google
       response
     end
 
-    def collect_languages buffer, class_name, tag_name, tag_id
+    def collect_languages buffer, index, class_name, tag_name, tag_id
       languages = []
 
       spaces = '\s?'
@@ -116,17 +116,23 @@ module Google
 
       class_part = "class#{spaces}=#{spaces}#{quote}#{class_name}#{quote}"
       name_part = "name#{spaces}=#{spaces}#{quote}#{tag_name}#{quote}"
-      id_part = "id#{spaces}=#{spaces}#{quote}old_sl#{quote}"
+      id_part = "id#{spaces}=#{spaces}#{quote}#{tag_id}#{quote}"
       tabindex_part = "tabindex#{spaces}=#{spaces}#{quote}0#{quote}"
-
       re1 = buffer.split(%r{<select#{spaces}#{class_part}#{spaces}#{name_part}#{spaces}#{id_part}#{spaces}#{tabindex_part}#{spaces}>(.*)?</select>}).select{|x| x =~ %r{<option} }
-      text = re1[0]
 
-      re2 = /<option(\s*)value="([a-z|A-Z]*)">([a-z|A-Z]*)<\/option>/
+      text = re1[index]
+      
+      if index == 0
+        pos = text.index('</select><span class=langselect')
+        text = text[0..pos]
+      end
 
-      matches = text.scan(re2)
+      re2 = /<option(\s*)value="([a-z|A-Z|-]*)">([a-z|A-Z|\(|\)|\s]*)<\/option>/
+
+      matches = text.gsub(/selected/i, '').squeeze.scan(re2)
 
       matches.each do |m|
+        p m[1]
         languages << Language.new(m[2], m[1])
       end
 

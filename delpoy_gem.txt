@@ -1,6 +1,10 @@
 rake gemspec
 rake build
 rake install
+git commit -m "..."
+git push origin master
 rake release
+
+
 
 

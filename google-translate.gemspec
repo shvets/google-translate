@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{google-translate}
-  s.version = "0.6.6"
+  s.version = "0.6.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Alexander Shvets"]
-  s.date = %q{2010-04-29}
+  s.date = %q{2010-05-04}
   s.description = %q{Simple client for Google Translate API.}
   s.email = %q{alexander.shvets@gmail.com}
   s.executables = ["translate", "t"]
@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
      "bin/t.bat",
      "bin/translate",
      "bin/translate.bat",
-     "google_translate.gemspec",
+     "google-translate.gemspec",
      "lib/google_translate.rb"
   ]
   s.homepage = %q{http://github.com/shvets/google-translate}
@@ -33,7 +33,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.requirements = ["none"]
   s.rubygems_version = %q{1.3.6}
-  s.summary = %q{Simple client for Google Translate API.}
+  s.summary = %q{Simple client for Google Translate API (Summary).}
   s.test_files = [
     "spec/spec_helper.rb",
      "spec/translate_spec.rb"
