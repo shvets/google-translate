@@ -1,0 +1,6 @@
+rake gemspec
+rake build
+rake install
+rake release
+
+
