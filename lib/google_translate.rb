@@ -132,7 +132,6 @@ module Google
       matches = text.gsub(/selected/i, '').squeeze.scan(re2)
 
       matches.each do |m|
-        p m[1]
         languages << Language.new(m[2], m[1])
       end
 
