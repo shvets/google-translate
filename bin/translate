@@ -51,13 +51,13 @@ class Translate
       language = @translator.detect_language(ARGV.shift)
 
       puts "Language: #{language.inspect}"
-    when /(..):(..)/ then
+    when /(.*):(.*)/ then
       from_text = ARGV.join(' ')
       from = $1
       to = $2
 
       display(@translator.translate(from.to_sym, to.to_sym, from_text))
-    when /(..)/ then
+    when /(.*)/ then
       from_text = ARGV.join(' ')
 
       from = @translator.detect_language(from_text)['language']
