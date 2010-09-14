@@ -3,8 +3,7 @@
 = Installing Google-Translate
 
 == Installing the Gem
-    $ sudo gem sources -a http://gemcutter.org
-    $ sudo gem install google-translate
+    $ gem install google-translate
 
 == Usage
 

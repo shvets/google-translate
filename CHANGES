@@ -32,3 +32,8 @@
 == Version 0.6.7
 
 * Deploy on gemcutter
+
+== Version 0.7.0
+
+* Fix changes in detect languages service
+

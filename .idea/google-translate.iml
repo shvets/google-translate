@@ -1,27 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="RUBY_MODULE" version="4">
+  <component name="GemRequirementsHolder" version="3">
+    <requirement>
+      <requirement>
+        <dependency name="gemcutter" version="0" bound="GREATER_OR_EQUAL" git="false" doRequire="true" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="jeweler" version="0" bound="GREATER_OR_EQUAL" git="false" doRequire="true" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="json_pure" version="0" bound="GREATER_OR_EQUAL" git="false" doRequire="true" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="mocha" version="0" bound="GREATER_OR_EQUAL" git="false" doRequire="true" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="rcov" version="0" bound="GREATER_OR_EQUAL" git="false" doRequire="true" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="rspec" version="0" bound="GREATER_OR_EQUAL" lib="spec" git="false" doRequire="true" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+  </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] columnize (v0.3.1, /Users/oshvets/.rvm/gems/ruby-1.8.7-p249/gems/columnize-0.3.1)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] gemcutter (v0.5.0, /Users/oshvets/.rvm/gems/ruby-1.8.7-p249/gems/gemcutter-0.5.0)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] google-translate (v0.6.4, /Users/oshvets/.rvm/gems/ruby-1.8.7-p249/gems/google-translate-0.6.4)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] google_translate (v0.0.3, /Users/oshvets/.rvm/gems/ruby-1.8.7-p249/gems/google_translate-0.0.3)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] json_pure (v1.4.2, /Users/oshvets/.rvm/gems/ruby-1.8.7-p249/gems/json_pure-1.4.2)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] linecache (v0.43, /Users/oshvets/.rvm/gems/ruby-1.8.7-p249@global/gems/linecache-0.43)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] mechanize (v1.0.0, /Users/oshvets/.rvm/gems/ruby-1.8.7-p249/gems/mechanize-1.0.0)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] mocha (v0.9.8, /Users/oshvets/.rvm/gems/ruby-1.8.7-p249/gems/mocha-0.9.8)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] net-scp (v1.0.2, /Users/oshvets/.rvm/gems/ruby-1.8.7-p249/gems/net-scp-1.0.2)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] net-ssh (v2.0.22, /Users/oshvets/.rvm/gems/ruby-1.8.7-p249/gems/net-ssh-2.0.22)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] nokogiri (v1.4.1, /Users/oshvets/.rvm/gems/ruby-1.8.7-p249/gems/nokogiri-1.4.1)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] rake (v0.8.7, /Users/oshvets/.rvm/gems/ruby-1.8.7-p249@global/gems/rake-0.8.7)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] rcov (v0.9.8, /Users/oshvets/.rvm/gems/ruby-1.8.7-p249/gems/rcov-0.9.8)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] rdoc (v2.5.7, /Users/oshvets/.rvm/gems/ruby-1.8.7-p249/gems/rdoc-2.5.7)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec (v1.3.0, /Users/oshvets/.rvm/gems/ruby-1.8.7-p249/gems/rspec-1.3.0)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] ruby-debug (v0.10.3, /Users/oshvets/.rvm/gems/ruby-1.8.7-p249/gems/ruby-debug-0.10.3)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] ruby-debug-base (v0.10.3, /Users/oshvets/.rvm/gems/ruby-1.8.7-p249/gems/ruby-debug-base-0.10.3)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] ruby-debug-ide (v0.4.9, /Users/oshvets/.rvm/gems/ruby-1.8.7-p249/gems/ruby-debug-ide-0.4.9)" level="application" />
+    <orderEntry type="library" name="[gem] columnize (v0.3.1, null)" level="application" />
+    <orderEntry type="library" name="[gem] gemcutter (v0.5.0, null)" level="application" />
+    <orderEntry type="library" name="[gem] google-translate (v0.6.4, null)" level="application" />
+    <orderEntry type="library" name="[gem] google_translate (v0.0.3, null)" level="application" />
+    <orderEntry type="library" name="[gem] json_pure (v1.4.2, null)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] linecache (v0.43, /Users/oshvets/.rvm/gems/ruby-1.8.7-p299/gems/linecache-0.43)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] mechanize (v1.0.0, /Users/oshvets/.rvm/gems/ruby-1.8.7-p299/gems/mechanize-1.0.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] mocha (v0.9.8, /Users/oshvets/.rvm/gems/ruby-1.8.7-p299/gems/mocha-0.9.8)" level="application" />
+    <orderEntry type="library" name="[gem] net-scp (v1.0.2, null)" level="application" />
+    <orderEntry type="library" name="[gem] net-ssh (v2.0.22, null)" level="application" />
+    <orderEntry type="library" name="[gem] nokogiri (v1.4.1, null)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rake (v0.8.7, /Users/oshvets/.rvm/gems/ruby-1.8.7-p299@global/gems/rake-0.8.7)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rcov (v0.9.8, /Users/oshvets/.rvm/gems/ruby-1.8.7-p299/gems/rcov-0.9.8)" level="application" />
+    <orderEntry type="library" name="[gem] rdoc (v2.5.7, null)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec (v1.3.0, /Users/oshvets/.rvm/gems/ruby-1.8.7-p299/gems/rspec-1.3.0)" level="application" />
+    <orderEntry type="library" name="[gem] ruby-debug (v0.10.3, null)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] ruby-debug-base (v0.10.3, /Users/oshvets/.rvm/gems/ruby-1.8.7-p299/gems/ruby-debug-base-0.10.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] ruby-debug-ide (v0.4.9, /Users/oshvets/.rvm/gems/ruby-1.8.7-p299/gems/ruby-debug-ide-0.4.9)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] bundler (v1.0.0, /Users/oshvets/.rvm/gems/ruby-1.8.7-p299/gems/bundler-1.0.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] json_pure (v1.4.6, /Users/oshvets/.rvm/gems/ruby-1.8.7-p299/gems/json_pure-1.4.6)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] gemcutter (v0.6.1, /Users/oshvets/.rvm/gems/ruby-1.8.7-p299/gems/gemcutter-0.6.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] jeweler (v1.4.0, /Users/oshvets/.rvm/gems/ruby-1.8.7-p299/gems/jeweler-1.4.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rcov (v0.9.9, /Users/oshvets/.rvm/gems/ruby-1.8.7-p299/gems/rcov-0.9.9)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] git (v1.2.5, /Users/oshvets/.rvm/gems/ruby-1.8.7-p299/gems/git-1.2.5)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] gemcutter (v0.6.1, /Users/oshvets/.rvm/gems/ruby-1.8.7-p299/gems/gemcutter-0.6.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] json_pure (v1.4.6, /Users/oshvets/.rvm/gems/ruby-1.8.7-p299/gems/json_pure-1.4.6)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rubyforge (v2.0.4, /Users/oshvets/.rvm/gems/ruby-1.8.7-p299/gems/rubyforge-2.0.4)" level="application" />
   </component>
 </module>
 

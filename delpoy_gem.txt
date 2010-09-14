@@ -2,7 +2,7 @@ rake gemspec
 rake build
 rake install
 git add .
-git commit -m "..."
+git commit -m "bug fix"
 git push origin master
 rake release
 

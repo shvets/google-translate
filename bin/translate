@@ -42,6 +42,8 @@ class Translate
 
     case ARGV.shift
 
+    when /(-v)|(--version)/ then
+      p "Version: #{File.open(File::dirname(__FILE__) + "/../VERSION").readlines()}"
     when 'list' then
       hash = @translator.supported_languages
 
