@@ -50,8 +50,14 @@ task :"release:gem" do
   puts "Commit message:"  
   message = STDIN.gets
 
+  version = "#{File.open(File::dirname(__FILE__) + "/VERSION").readlines().first}"
+
   %x(
-    git commit -m "#{message}"  
+    git commit -m "#{message}"
+    
+    git push origin master
+
+    gem push pkg/google-translate-#{version}.gem      
   )
 end
 
