@@ -7,7 +7,7 @@ require 'spec/rake/spectask'
 require 'rake/rdoctask'
 require 'rcov/rcovtask'
 
-task :default => :package
+task :default => :gemspec
 
 begin
   require 'bundler'
@@ -37,6 +37,22 @@ begin
   end
 rescue LoadError
   puts "Bundler not available. Install it s with: [sudo] gem install bundler"
+end
+
+desc "Release the gem"
+task :"release:gem" do
+  %x(
+      rake gemspec
+      rake build
+      rake install
+      git add .  
+  )  
+  puts "Commit message:"  
+  message = STDIN.gets
+
+  %x(
+    git commit -m "#{message}"  
+  )
 end
 
 desc "Run gem code locally"
