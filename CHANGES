@@ -37,3 +37,6 @@
 
 * Fix changes in detect languages service
 
+== Version 0.7.1
+
+* Ruby 1.9.2 ready
