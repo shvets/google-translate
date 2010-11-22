@@ -1,3 +1,5 @@
 pkg/
 *.gem
 google-translate.gemspec
+.bundle
+.DS_Store
