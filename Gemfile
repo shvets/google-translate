@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+gem "httparty"
 gem "json_pure"
 
 group :development do

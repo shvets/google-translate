@@ -27,9 +27,7 @@ module Google
     
     it "should translate test string from one language to another" do
       r = @translator.translate(:en, :ru, "hello world!")
-
       puts r
-
       r.size.should be > 0
     end
 
