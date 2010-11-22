@@ -3,6 +3,7 @@
 require 'open-uri'
 require 'cgi'
 require 'json'
+require "httparty"
 
 module Google
   Language = Struct.new(:name, :code) do
@@ -12,6 +13,12 @@ module Google
   end
 
   class Translator
+    include HTTParty
+    base_uri "http://ajax.googleapis.com/ajax/services/language/"
+    default_params :v => "1.0"
+    
+    LANGUAGES_LOOKUP_URL = "http://translate.google.com"
+    
     def self.Exception(*names)
       cl = Module === self ? self : Object
       names.each {|n| cl.const_set(n, Class.new(Exception))}
@@ -20,27 +27,19 @@ module Google
     Exception :MissingFromLanguage, :MissingToLanguage, :MissingTextLanguage,
               :TranslateServerIsDown, :InvalidResponse, :MissingText, :MissingTestText
 
-    URL_STRING = "http://ajax.googleapis.com/ajax/services/language/"
-    URL2_STRING = "http://translate.google.com"
-
     def translate(from, to, from_text, options={})
       raise(MissingFromLanguage) if from.nil?
       raise(MissingToLanguage) if to.nil?
       raise(MissingTextLanguage) if from_text.nil?
-
-      request = URL_STRING + "translate?v=1.0&langpair=#{from}%7C#{to}&q=" + CGI.escape(from_text) 
       
       begin
-        response = call_service(request, [:response_status, :response_details, :response_data])
-
-        raise(TranslateServerIsDown) if response.empty?
-
-        raise(InvalidResponse, response[:response_details]) if response[:response_status] != 200 # success
-
-        to_text = response[:response_data]['translatedText']
-
-        (options[:html]) ? CGI.unescapeHTML(to_text) : to_text
-      rescue OpenURI::HTTPError
+        response = self.class.post("/translate", :query => {:langpair => "#{from}|#{to}"}, :body => {:q => from_text})
+        response = (response && response.parsed_response) ? response.parsed_response : nil
+        raise(TranslateServerIsDown) if (!response || response.empty?)
+        raise(InvalidResponse, response["responseDetails"]) if response["responseStatus"] != 200 # success
+        to_text = response["responseData"]["translatedText"]
+        to_text = (options[:html]) ? CGI.unescapeHTML(to_text) : to_text
+      rescue HTTParty::ResponseError
         raise(TranslateServerIsDown)
       end
     end
@@ -48,51 +47,23 @@ module Google
     def detect_language(test_text)
       raise(MissingTestText) if test_text.nil?
 
-      request = URL_STRING + "detect?v=1.0&q=" + CGI.escape(test_text) 
-
       begin
-        response = call_service(request, [:response_data]) 
-        response_data = response[:response_data]
-
-        raise(TranslateServerIsDown) if response.empty?
-
-        response_data
-      rescue OpenURI::HTTPError
+        response = self.class.get("/detect", :query => {:q => test_text})
+        response = (response && response.parsed_response) ? response.parsed_response : nil
+        raise(TranslateServerIsDown) if (!response || response.empty?)
+        response_data = response["responseData"]
+        return response_data
+      rescue HTTParty::ResponseError
         raise(TranslateServerIsDown)
       end
     end
   
     def supported_languages
-      call_service2(URL2_STRING , [])
+      fetch_languages(LANGUAGES_LOOKUP_URL , [])
     end
 
     private
-
-    def camelize(str)
-      words = str.split('_')
-
-      words[0] + words[1..-1].map {|w| w.capitalize}.join
-    end
-
-    def call_service(request, keys)
-      response = {}
-
-      open(request) do |stream|
-        content = stream.read
-
-        unless content.nil?
-          json = JSON.parse(content)
-
-          keys.each do |key|
-            response[key] = json[camelize(key.to_s)]
-          end
-        end
-      end
-
-      response
-    end
-
-    def call_service2(request, keys)
+    def fetch_languages(request, keys)
       response = {}
 
       open(URI.escape(request)) do |stream|
