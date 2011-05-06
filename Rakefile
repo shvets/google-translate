@@ -1,9 +1,10 @@
 # Rakefile for google-translate
 
-require 'rubygems'
+require 'rubygems' unless RUBY_VERSION =~ /1.9.*/
+
 require 'rake/gempackagetask'
 require 'rake/testtask'
-require 'spec/rake/spectask'
+require 'rspec/core/rake_task'
 require 'rake/rdoctask'
 require 'rcov/rcovtask'
 
@@ -67,8 +68,13 @@ task :"run:gem" do
   puts ruby("#{command}")
 end
 
-Spec::Rake::SpecTask.new do |task|
-  task.libs << 'lib'
+#Spec::Rake::SpecTask.new do |task|
+#  task.libs << 'lib'
+#  task.pattern = 'spec/**/*_spec.rb'
+#  task.verbose = false
+#end
+
+RSpec::Core::RakeTask.new do |task|
   task.pattern = 'spec/**/*_spec.rb'
   task.verbose = false
 end

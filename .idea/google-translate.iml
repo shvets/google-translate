@@ -3,43 +3,51 @@
   <component name="GemRequirementsHolder" version="3">
     <requirement>
       <requirement>
-        <dependency name="gemcutter" version="0" bound="GREATER_OR_EQUAL" git="false" doRequire="true" />
+        <dependency name="gemcutter" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
       </requirement>
       <source from="Gemfile" />
     </requirement>
     <requirement>
       <requirement>
-        <dependency name="jeweler" version="0" bound="GREATER_OR_EQUAL" git="false" doRequire="true" />
+        <dependency name="httparty" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
       </requirement>
       <source from="Gemfile" />
     </requirement>
     <requirement>
       <requirement>
-        <dependency name="json_pure" version="0" bound="GREATER_OR_EQUAL" git="false" doRequire="true" />
+        <dependency name="jeweler" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
       </requirement>
       <source from="Gemfile" />
     </requirement>
     <requirement>
       <requirement>
-        <dependency name="mocha" version="0" bound="GREATER_OR_EQUAL" git="false" doRequire="true" />
+        <dependency name="json_pure" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
       </requirement>
       <source from="Gemfile" />
     </requirement>
     <requirement>
       <requirement>
-        <dependency name="rcov" version="0" bound="GREATER_OR_EQUAL" git="false" doRequire="true" />
+        <dependency name="mocha" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
       </requirement>
       <source from="Gemfile" />
     </requirement>
     <requirement>
       <requirement>
-        <dependency name="rspec" version="0" bound="GREATER_OR_EQUAL" lib="spec" git="false" doRequire="true" />
+        <dependency name="rcov" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="rspec" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
       </requirement>
       <source from="Gemfile" />
     </requirement>
   </component>
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/.bundle" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="[gem] columnize (v0.3.1, null)" level="application" />
@@ -69,6 +77,14 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] gemcutter (v0.6.1, /Users/oshvets/.rvm/gems/ruby-1.8.7-p299/gems/gemcutter-0.6.1)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] json_pure (v1.4.6, /Users/oshvets/.rvm/gems/ruby-1.8.7-p299/gems/json_pure-1.4.6)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] rubyforge (v2.0.4, /Users/oshvets/.rvm/gems/ruby-1.8.7-p299/gems/rubyforge-2.0.4)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] bundler (v1.0.7, /Users/oshvets/.rvm/gems/ruby-1.8.7-p302@ruby-test-examples/gems/bundler-1.0.7)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] jeweler (v1.5.1, /Users/oshvets/.rvm/gems/ruby-1.8.7-p302@ruby-test-examples/gems/jeweler-1.5.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec (v2.1.0, /Users/oshvets/.rvm/gems/ruby-1.8.7-p302@ruby-test-examples/gems/rspec-2.1.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec-mocks (v2.1.0, /Users/oshvets/.rvm/gems/ruby-1.8.7-p302@ruby-test-examples/gems/rspec-mocks-2.1.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec-expectations (v2.1.0, /Users/oshvets/.rvm/gems/ruby-1.8.7-p302@ruby-test-examples/gems/rspec-expectations-2.1.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] diff-lcs (v1.1.2, /Users/oshvets/.rvm/gems/ruby-1.8.7-p302@ruby-test-examples/gems/diff-lcs-1.1.2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rspec-core (v2.1.0, /Users/oshvets/.rvm/gems/ruby-1.8.7-p302@ruby-test-examples/gems/rspec-core-2.1.0)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] bundler (v1.0.3, /Users/oshvets/.rvm/gems/ruby-1.8.7-p302@global/gems/bundler-1.0.3)" level="application" />
   </component>
 </module>
 

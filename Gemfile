@@ -10,6 +10,6 @@ end
 
 group :test do
   gem "mocha"
-  gem "rspec", :require => "spec"
+  gem "rspec"
   gem "rcov"
 end
