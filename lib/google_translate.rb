@@ -3,9 +3,9 @@
 require 'open-uri'
 require 'cgi'
 require 'json'
-require "httparty"
 
 module Google
+
   Language = Struct.new(:name, :code) do
     def to_s
       "(" + code + ": " + name + ")"
@@ -13,12 +13,8 @@ module Google
   end
 
   class Translator
-    include HTTParty
-    base_uri "http://ajax.googleapis.com/ajax/services/language/"
-    default_params :v => "1.0"
-    
-    LANGUAGES_LOOKUP_URL = "http://translate.google.com"
-    
+    GOOGLE_TRANSLATE_SERVICE_URL = "http://translate.google.com"
+
     def self.Exception(*names)
       cl = Module === self ? self : Object
       names.each {|n| cl.const_set(n, Class.new(Exception))}
@@ -31,38 +27,52 @@ module Google
       raise(MissingFromLanguage) if from.nil?
       raise(MissingToLanguage) if to.nil?
       raise(MissingTextLanguage) if from_text.nil?
-      
+
       begin
-        response = self.class.post("/translate", :query => {:langpair => "#{from}|#{to}"}, :body => {:q => from_text})
-        response = (response && response.parsed_response) ? response.parsed_response : nil
-        raise(TranslateServerIsDown) if (!response || response.empty?)
-        raise(InvalidResponse, response["responseDetails"]) if response["responseStatus"] != 200 # success
-        to_text = response["responseData"]["translatedText"]
-        to_text = (options[:html]) ? CGI.unescapeHTML(to_text) : to_text
-      rescue HTTParty::ResponseError
-        raise(TranslateServerIsDown)
+        url = GOOGLE_TRANSLATE_SERVICE_URL + "/translate_a/t?client=t&text=#{from_text}&hl=#{from}&tl=#{to}"
+        # &sl=auto&multires=1&prev=btn&ssel=0&tsel=4&uptl=ru&alttl=en&sc=1
+
+        open(URI.escape(url)) do |stream|
+          content = stream.read
+
+          s = content.split(',').collect {|s| s == '' ? "\"\"" : s}.join(",")
+
+          result = JSON.parse(s)
+
+          raise(TranslateServerIsDown) if (!result || result.empty?)
+
+  #        raise(InvalidResponse, result["responseDetails"]) if response.code.to_i != 200 # success
+
+          to_text = result[0][0][0]
+          translit = result[0][0][2]
+          (options[:html]) ? CGI.unescapeHTML(translit) : translit
+        end
+      rescue Exception => e
+         raise(TranslateServerIsDown)
       end
     end
 
-    def detect_language(test_text)
-      raise(MissingTestText) if test_text.nil?
+#    def detect_language(test_text)
+  
+      # raise(MissingTestText) if test_text.nil?
 
-      begin
-        response = self.class.get("/detect", :query => {:q => test_text})
-        response = (response && response.parsed_response) ? response.parsed_response : nil
-        raise(TranslateServerIsDown) if (!response || response.empty?)
-        response_data = response["responseData"]
-        return response_data
-      rescue HTTParty::ResponseError
-        raise(TranslateServerIsDown)
-      end
-    end
+      # begin
+      #   response = self.class.get("/detect", :query => {:q => test_text})
+      #   response = (response && response.parsed_response) ? response.parsed_response : nil
+      #   raise(TranslateServerIsDown) if (!response || response.empty?)
+      #   response_data = response["responseData"]
+      #   return response_data
+      # rescue HTTParty::ResponseError
+      #   raise(TranslateServerIsDown)
+      # end
+    #end
   
     def supported_languages
-      fetch_languages(LANGUAGES_LOOKUP_URL , [])
+      fetch_languages(GOOGLE_TRANSLATE_SERVICE_URL , [])
     end
 
     private
+
     def fetch_languages(request, keys)
       response = {}
 
@@ -103,8 +113,12 @@ module Google
       end
 
       re2 = /<option(\s*)value="([a-z|A-Z|-]*)">([a-z|A-Z|\(|\)|\s]*)<\/option>/
-
       matches = text.gsub(/selected/i, '').squeeze.scan(re2)
+
+      if matches.size == 0
+        re2 = /<option(\s*)value=([a-z|A-Z|-]*)>([a-z|A-Z|\(|\)|\s]*)<\/option>/
+        matches = text.gsub(/selected/i, '').squeeze.scan(re2)
+      end
 
       matches.each do |m|
          languages << Language.new(m[2], m[1])

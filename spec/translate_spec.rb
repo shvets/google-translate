@@ -31,9 +31,9 @@ module Google
       r.size.should be > 0
     end
 
-    it "should detect the language of a string" do
-      @translator.detect_language("bonjour tout le monde")['language'].should be == "fr"
-    end
+    #it "should detect the language of a string" do
+    #  @translator.detect_language("bonjour tout le monde")['language'].should be == "fr"
+    #end
      
     it "should raise an error if no string" do
       lambda {
@@ -41,9 +41,9 @@ module Google
       }.should raise_error
     end
     
-    it "should return unreliable flag if language is not recognized" do
-      @translator.detect_language("azafretmkldt")['isReliable'].should be_false
-    end
+    #it "should return unreliable flag if language is not recognized" do
+    #  @translator.detect_language("azafretmkldt")['isReliable'].should be_false
+    #end
 
     it "should return list of supported languages" do
       languages = @translator.supported_languages

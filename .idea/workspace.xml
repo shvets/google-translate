@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="27826e27-f211-4f38-bd71-88309e7ed342" name="Default" comment="Renamed language lookup methods (to have more descriptive names).&#10;(cherry picked from commit 4a5e9875dc0bda29cc5cdb1e45bfb38a0970db44)&#10;" />
+    <list default="true" id="27826e27-f211-4f38-bd71-88309e7ed342" name="Default" comment="Renamed language lookup methods (to have more descriptive names).&#10;(cherry picked from commit 4a5e9875dc0bda29cc5cdb1e45bfb38a0970db44)&#10;">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/google-translate.iml" afterPath="$PROJECT_DIR$/.idea/google-translate.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CHANGES" afterPath="$PROJECT_DIR$/CHANGES" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VERSION" afterPath="$PROJECT_DIR$/VERSION" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/google_translate.rb" afterPath="$PROJECT_DIR$/lib/google_translate.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/translate_spec.rb" afterPath="$PROJECT_DIR$/spec/translate_spec.rb" />
+    </list>
     <list id="8bceb49d-7e0c-4091-bde9-7ac2cd7ef145" name="Translate method now does POSTs rather than GETs (allows you to send up to 5,000 characters) to translate rather than being imposed by the GET query string limits.&#10;(cherry picked from commit c5e221ad627b74ca4afe932cf553196ca0be7c19)&#10;" comment="Translate method now does POSTs rather than GETs (allows you to send up to 5,000 characters) to translate rather than being imposed by the GET query string limits.&#10;(cherry picked from commit c5e221ad627b74ca4afe932cf553196ca0be7c19)&#10;" />
     <list id="2012fae1-5c1c-46e0-9846-f895b7c7f6dc" name="&#10;&#10;&#10;Translate method now does POSTs rather than GETs (allows you to send up to 5,000 characters) to translate rather than being imposed by the GET query string limits.&#10;(cherry picked from commit c5e221ad627b74ca4afe932cf553196ca0be7c19)" comment="" />
     <ignored path=".idea/workspace.xml" />
@@ -13,7 +23,6 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
-  <component name="CoverageDataManager" choice="3" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
     <option name="REVERSE_PATCH" value="false" />
@@ -29,16 +38,7 @@
       <file leaf-file-name="translate_spec.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/translate_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="14" selection-start="282" selection-end="282" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Rakefile" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Rakefile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="11" selection-start="1364" selection-end="1369" vertical-scroll-proportion="0.0">
+            <state line="16" column="169" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -47,16 +47,16 @@
       <file leaf-file-name="google_translate.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/google_translate.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="30" selection-start="1674" selection-end="1677" vertical-scroll-proportion="0.0">
+            <state line="49" column="27" selection-start="1514" selection-end="1514" vertical-scroll-proportion="-30.153847">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spec_helper.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
+      <file leaf-file-name="VERSION" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VERSION">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="23" selection-start="172" selection-end="172" vertical-scroll-proportion="0.0">
+            <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -65,34 +65,25 @@
       <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0">
+            <state line="12" column="2" selection-start="153" selection-end="153" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".rvmrc" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.rvmrc">
+      <file leaf-file-name="Rakefile" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Rakefile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="30" selection-start="30" selection-end="30" vertical-scroll-proportion="0.0">
+            <state line="43" column="7" selection-start="1312" selection-end="1323" vertical-scroll-proportion="0.19343697">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="translate" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bin/translate">
+      <file leaf-file-name="CHANGES" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CHANGES">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="34" selection-start="593" selection-end="593" vertical-scroll-proportion="0.610052">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="t" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/t">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="45" column="65" selection-start="679" selection-end="679" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -131,16 +122,17 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/test.html" />
-        <option value="$PROJECT_DIR$/CHANGES" />
         <option value="$PROJECT_DIR$/text.html" />
-        <option value="$PROJECT_DIR$/spec/translate_spec.rb" />
-        <option value="$PROJECT_DIR$/lib/google_translate.rb" />
-        <option value="$PROJECT_DIR$/bin/translate" />
         <option value="$PROJECT_DIR$/delpoy_gem.txt" />
-        <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/Rakefile" />
+        <option value="$PROJECT_DIR$/bin/translate" />
+        <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/.rvmrc" />
+        <option value="$PROJECT_DIR$/spec/translate_spec.rb" />
+        <option value="$PROJECT_DIR$/Rakefile" />
+        <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/lib/google_translate.rb" />
+        <option value="$PROJECT_DIR$/VERSION" />
+        <option value="$PROJECT_DIR$/CHANGES" />
       </list>
     </option>
   </component>
@@ -165,12 +157,13 @@
       <showLibraryContents />
       <hideEmptyPackages />
       <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
+      <autoscrollToSource ProjectPane="true" />
+      <autoscrollFromSource ProjectPane="true" />
       <sortByType />
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -233,17 +226,17 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="recentsLimit" value="5" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyIdeSdkConfigurable" />
-    <property name="options.searchVisible" value="true" />
+    <property name="recentsLimit" value="5" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
-  <component name="RunManager" selected="Ruby.translate_spec">
+  <component name="RunManager" selected="RSpec.translate_spec">
     <configuration default="false" name="translate_spec" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="google-translate" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
@@ -304,8 +297,10 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs />
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <envs>
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" track_test_folders="true" runner="rcov">
         <COVERAGE_PATTERN ENABLED="true">
           <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
@@ -322,7 +317,9 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <RunnerSettings RunnerId="RubyDebugRunner" />
       <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyDebugRunner" />
       <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
@@ -356,6 +353,38 @@
       <RunnerSettings RunnerId="RubyRunner" />
       <ConfigurationWrapper RunnerId="RubyDebugRunner" />
       <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Translator should translate test string from one language to another" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
+      <predefined_log_file id="RUBY_RSPEC" enabled="true" />
+      <module name="google-translate" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$/spec" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$PROJECT_DIR$/spec/translate_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="[none]" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="Translator should translate test string from one language to another" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <RunnerSettings RunnerId="RubyDebugRunner" />
+      <ConfigurationWrapper RunnerId="RubyDebugRunner" />
       <method />
     </configuration>
     <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
@@ -404,11 +433,51 @@
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method />
     </configuration>
+    <configuration default="true" type="CucumberRunConfigurationType" factoryName="Cucumber">
+      <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
+      <module name="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="ANSICON" value="" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*.feature" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="VERBOSE_OPTION" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
+      <method />
+    </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
       <JSRemoteDebuggerConfigurationSettings>
         <option name="engineId" value="embedded" />
         <option name="fileUrl" />
       </JSRemoteDebuggerConfigurationSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda">
@@ -466,18 +535,21 @@
       <ConfigurationWrapper RunnerId="RubyDebugRunner" />
       <method />
     </configuration>
-    <list size="5">
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Ruby.translate_spec" />
       <item index="1" class="java.lang.String" itemvalue="RSpec. should return list of supported languages" />
       <item index="2" class="java.lang.String" itemvalue="RSpec.translate_spec" />
       <item index="3" class="java.lang.String" itemvalue="RSpec.Translator should return list of supported languages" />
-      <item index="4" class="java.lang.String" itemvalue="RSpec.Unnamed" />
+      <item index="4" class="java.lang.String" itemvalue="RSpec.Translator should translate test string from one language to another" />
+      <item index="5" class="java.lang.String" itemvalue="RSpec.Unnamed" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration" maxAnnotateRevisions="500">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
     <option name="LAST_MERGED_REVISION" />
     <option name="MERGE_DRY_RUN" value="false" />
     <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
@@ -503,17 +575,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="149" y="23" width="1434" height="995" extended-state="0" />
-    <editor active="true" />
+    <frame x="140" y="22" width="1540" height="997" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3281768" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Code Outline" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24822696" sideWeight="0.6710963" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.506424" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13404825" sideWeight="0.6718232" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47403315" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -527,6 +600,15 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
     <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
     <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
@@ -538,6 +620,7 @@
     <option name="CHANGED_ON_SERVER_INTERVAL" value="5" />
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="LAST_COMMIT_MESSAGE" value="Updated translate and detect-methods to use HTTParty.&#10;(cherry picked from commit 56b09b5aeebe695e4b57451dd87f3237a2b61fa0)&#10;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
@@ -565,62 +648,17 @@
           <url>file://$PROJECT_DIR$/Rakefile</url>
           <line>34</line>
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/lib/google_translate.rb</url>
+          <line>35</line>
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs18/array.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="837" column="6" selection-start="21401" selection-end="21401" vertical-scroll-proportion="0.5707196" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CHANGES">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="557" selection-end="557" vertical-scroll-proportion="0.9463987" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/VERSION">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/translate_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="14" selection-start="282" selection-end="282" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Rakefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="11" selection-start="1364" selection-end="1369" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/google_translate.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="30" selection-start="1674" selection-end="1677" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="23" selection-start="172" selection-end="172" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.rvmrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="30" selection-start="30" selection-end="30" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/t">
@@ -630,7 +668,74 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/translate">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="34" selection-start="593" selection-end="593" vertical-scroll-proportion="0.610052">
+        <state line="22" column="34" selection-start="593" selection-end="593" vertical-scroll-proportion="0.6079447" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="23" selection-start="172" selection-end="172" vertical-scroll-proportion="0.24870466" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.8.7-p352@google-translate/gems/rspec-core-2.1.0/lib/rspec/core/example.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="0" selection-start="1228" selection-end="1228" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/open-uri.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="1040" selection-end="1040" vertical-scroll-proportion="1.1100478" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/uri/common.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="288" column="0" selection-start="10605" selection-end="10605" vertical-scroll-proportion="0.3325359" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.rvmrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="2" selection-start="153" selection-end="153" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/translate_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="169" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/google_translate.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="27" selection-start="1514" selection-end="1514" vertical-scroll-proportion="-30.153847">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VERSION">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CHANGES">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="65" selection-start="679" selection-end="679" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Rakefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="7" selection-start="1312" selection-end="1323" vertical-scroll-proportion="0.19343697">
           <folding />
         </state>
       </provider>
