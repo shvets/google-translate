@@ -69,7 +69,7 @@ class Translate
     #  rescue Exception => e
     #    puts "Error: " + e.message
     #  end
-    #end
+    end
   end
 end
 
