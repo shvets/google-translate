@@ -41,6 +41,6 @@
 
 * Ruby 1.9.2 ready
 
-== Version 0.8.0
+== Version 0.8.4
 
 * Stop using translate API, start using scraping google translate

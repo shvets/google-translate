@@ -45,8 +45,8 @@ module Google
 
           r1 = result[0][0][0]
           r2 = result[0][0][2]
-          to_text = r2.empty? ? r1 : r2
-          (options[:html]) ? CGI.unescapeHTML(to_text) : to_text
+
+          [r1, r2]
         end
       rescue Exception => e
          raise(TranslateServerIsDown)

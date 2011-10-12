@@ -25,12 +25,16 @@ class Translate
     puts list.join(', ')
   end
 
-  def display text
+  def display result
+    r1, r2 = *result
+
     if RUBY_PLATFORM =~ /mswin32/
-      File.open("temp.txt", "w") {|f| f.write text }
-      %x[notepad temp.txt] 
+    #  File.open("temp.txt", "w") {|f| f.write text }
+    #  %x[notepad temp.txt]
+
+      puts (r2.empty? ? r1 : r2 )
     else
-      puts text
+      puts r1
     end
   end
 
