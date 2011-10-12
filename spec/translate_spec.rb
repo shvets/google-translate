@@ -35,11 +35,11 @@ module Google
     #  @translator.detect_language("bonjour tout le monde")['language'].should be == "fr"
     #end
      
-    it "should raise an error if no string" do
-      lambda {
-        @translator.detect_language(nil)
-      }.should raise_error
-    end
+    #it "should raise an error if no string" do
+    #  lambda {
+    #    @translator.detect_language(nil)
+    #  }.should raise_error
+    #end
     
     #it "should return unreliable flag if language is not recognized" do
     #  @translator.detect_language("azafretmkldt")['isReliable'].should be_false

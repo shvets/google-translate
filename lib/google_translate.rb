@@ -43,9 +43,10 @@ module Google
 
   #        raise(InvalidResponse, result["responseDetails"]) if response.code.to_i != 200 # success
 
-          to_text = result[0][0][0]
-          translit = result[0][0][2]
-          (options[:html]) ? CGI.unescapeHTML(translit) : translit
+          r1 = result[0][0][0]
+          r2 = result[0][0][2]
+          to_text = r2.empty? ? r1 : r2
+          (options[:html]) ? CGI.unescapeHTML(to_text) : to_text
         end
       rescue Exception => e
          raise(TranslateServerIsDown)

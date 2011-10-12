@@ -12,7 +12,6 @@ class Translate
   USAGE= <<-TEXT
     Usage:
       translate list                 - displays the list of supported languages
-      translate detect "hello world" - detects language of text
       translate en:ru "hello world"  - translates from en to ru
       translate ru "hello world"     - translated from auto-detected language to ru 
   TEXT
@@ -49,28 +48,28 @@ class Translate
 
       print_languages hash[:from_languages], "From Languages:"
       print_languages hash[:to_languages], "To Languages:"
-    when 'detect' then
-      language = @translator.detect_language(ARGV.shift)
-
-      puts "Language: #{language.inspect}"
+    #when 'detect' then
+    #  language = @translator.detect_language(ARGV.shift)
+    #
+    #  puts "Language: #{language.inspect}"
     when /(.*):(.*)/ then
       from_text = ARGV.join(' ')
       from = $1
       to = $2
 
       display(@translator.translate(from.to_sym, to.to_sym, from_text))
-    when /(.*)/ then
-      from_text = ARGV.join(' ')
-
-      from = @translator.detect_language(from_text)['language']
-      to = $1
-
-      begin
-        display(@translator.translate(from.to_sym, to.to_sym, from_text))
-      rescue Exception => e
-        puts "Error: " + e.message
-      end
-    end
+    #when /(.*)/ then
+    #  from_text = ARGV.join(' ')
+    #
+    #  from = @translator.detect_language(from_text)['language']
+    #  to = $1
+    #
+    #  begin
+    #    display(@translator.translate(from.to_sym, to.to_sym, from_text))
+    #  rescue Exception => e
+    #    puts "Error: " + e.message
+    #  end
+    #end
   end
 end
 
