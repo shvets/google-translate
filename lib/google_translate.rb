@@ -1,6 +1,7 @@
 # google_translate.rb
 
 require 'open-uri'
+
 require 'cgi'
 require 'json'
 
@@ -29,8 +30,7 @@ module Google
       raise(MissingTextLanguage) if from_text.nil?
 
       begin
-        url = GOOGLE_TRANSLATE_SERVICE_URL + "/translate_a/t?client=t&text=#{from_text}&hl=#{from}&tl=#{to}"
-        # &sl=auto&multires=1&prev=btn&ssel=0&tsel=4&uptl=ru&alttl=en&sc=1
+        url = GOOGLE_TRANSLATE_SERVICE_URL + "/translate_a/t?client=t&text=#{from_text}&hl=#{from}&sl=auto&tl=#{to}&multires=1&prev=btn&ssel=0&tsel=4&uptl=#{to}&alttl=#{from}&sc=1"
 
         open(URI.escape(url)) do |stream|
           content = stream.read

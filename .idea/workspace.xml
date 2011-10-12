@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="27826e27-f211-4f38-bd71-88309e7ed342" name="Default" comment="Renamed language lookup methods (to have more descriptive names).&#10;(cherry picked from commit 4a5e9875dc0bda29cc5cdb1e45bfb38a0970db44)&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/README" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VERSION" afterPath="$PROJECT_DIR$/VERSION" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/translate" afterPath="$PROJECT_DIR$/bin/translate" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/t" afterPath="$PROJECT_DIR$/bin/t" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/google_translate.rb" afterPath="$PROJECT_DIR$/lib/google_translate.rb" />
     </list>
     <list id="8bceb49d-7e0c-4091-bde9-7ac2cd7ef145" name="Translate method now does POSTs rather than GETs (allows you to send up to 5,000 characters) to translate rather than being imposed by the GET query string limits.&#10;(cherry picked from commit c5e221ad627b74ca4afe932cf553196ca0be7c19)&#10;" comment="Translate method now does POSTs rather than GETs (allows you to send up to 5,000 characters) to translate rather than being imposed by the GET query string limits.&#10;(cherry picked from commit c5e221ad627b74ca4afe932cf553196ca0be7c19)&#10;" />
     <list id="2012fae1-5c1c-46e0-9846-f895b7c7f6dc" name="&#10;&#10;&#10;Translate method now does POSTs rather than GETs (allows you to send up to 5,000 characters) to translate rather than being imposed by the GET query string limits.&#10;(cherry picked from commit c5e221ad627b74ca4afe932cf553196ca0be7c19)" comment="" />
@@ -33,7 +33,25 @@
       <file leaf-file-name="translate_spec.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/translate_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="40" selection-start="644" selection-end="644" vertical-scroll-proportion="0.0">
+            <state line="28" column="55" selection-start="659" selection-end="659" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="t" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/t">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="t.bat" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/t.bat">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -42,7 +60,16 @@
       <file leaf-file-name="google_translate.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/google_translate.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="39" selection-start="1436" selection-end="1436" vertical-scroll-proportion="-4.769231">
+            <state line="32" column="86" selection-start="878" selection-end="878" vertical-scroll-proportion="-1.5384616">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="http.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/net/http.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1594" column="8" selection-start="47690" selection-end="47690" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -69,7 +96,7 @@
       <file leaf-file-name="Rakefile" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Rakefile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="170" selection-start="1439" selection-end="1439" vertical-scroll-proportion="0.0">
+            <state line="48" column="31" selection-start="1406" selection-end="1406" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -78,7 +105,7 @@
       <file leaf-file-name="CHANGES" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CHANGES">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="35" selection-start="594" selection-end="594" vertical-scroll-proportion="0.0">
+            <state line="41" column="63" selection-start="594" selection-end="594" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -87,7 +114,7 @@
       <file leaf-file-name="translate" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/translate">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="46" selection-start="1797" selection-end="1797" vertical-scroll-proportion="0.0">
+            <state line="9" column="10" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -133,10 +160,10 @@
         <option value="$PROJECT_DIR$/Rakefile" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/CHANGES" />
-        <option value="$PROJECT_DIR$/lib/google_translate.rb" />
-        <option value="$PROJECT_DIR$/spec/translate_spec.rb" />
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/bin/translate" />
+        <option value="$PROJECT_DIR$/lib/google_translate.rb" />
+        <option value="$PROJECT_DIR$/spec/translate_spec.rb" />
         <option value="$PROJECT_DIR$/VERSION" />
       </list>
     </option>
@@ -175,6 +202,64 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="google-translate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="google-translate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; RVM: ruby-1.8.7-p352 [google-translate] &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="google-translate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; RVM: ruby-1.8.7-p352 [google-translate] &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="1.8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="google-translate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; RVM: ruby-1.8.7-p352 [google-translate] &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="1.8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="net" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -585,14 +670,14 @@
     <frame x="140" y="22" width="1540" height="997" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3281768" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3281768" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Code Outline" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13404825" sideWeight="0.5259668" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47403315" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13404825" sideWeight="0.6718232" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47403315" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -659,11 +744,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/spec_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="23" selection-start="172" selection-end="172" vertical-scroll-proportion="0.24870466" />
@@ -698,42 +778,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/t">
+    <entry file="file://$PROJECT_DIR$/CHANGES">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/translate_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="40" selection-start="644" selection-end="644" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/google_translate.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="39" selection-start="1436" selection-end="1436" vertical-scroll-proportion="-4.769231">
+        <state line="41" column="63" selection-start="594" selection-end="594" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Rakefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="170" selection-start="1439" selection-end="1439" vertical-scroll-proportion="0.0">
+        <state line="48" column="31" selection-start="1406" selection-end="1406" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CHANGES">
+    <entry file="file://$PROJECT_DIR$/bin/t.bat">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="35" selection-start="594" selection-end="594" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/t">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/translate">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="46" selection-start="1797" selection-end="1797" vertical-scroll-proportion="0.0">
+        <state line="9" column="10" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/net/http.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1594" column="8" selection-start="47690" selection-end="47690" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/google_translate.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="86" selection-start="878" selection-end="878" vertical-scroll-proportion="-1.5384616">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/translate_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="55" selection-start="659" selection-end="659" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
