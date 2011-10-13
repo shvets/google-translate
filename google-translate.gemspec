@@ -8,11 +8,11 @@ Gem::Specification.new do |s|
   s.version = "0.8.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = [%q{Alexander Shvets}]
-  s.date = %q{2011-10-12}
+  s.authors = ["Alexander Shvets"]
+  s.date = %q{2011-10-13}
   s.description = %q{Simple client for Google Translate API.}
   s.email = %q{alexander.shvets@gmail.com}
-  s.executables = [%q{translate}, %q{t}]
+  s.executables = ["translate", "t"]
   s.extra_rdoc_files = [
     "README"
   ]
@@ -29,14 +29,10 @@ Gem::Specification.new do |s|
     "lib/google_translate.rb"
   ]
   s.homepage = %q{http://github.com/shvets/google-translate}
-  s.require_paths = [%q{lib}]
-  s.requirements = [%q{none}]
-  s.rubygems_version = %q{1.8.6}
+  s.require_paths = ["lib"]
+  s.requirements = ["none"]
+  s.rubygems_version = %q{1.6.2}
   s.summary = %q{Simple client for Google Translate API (Summary).}
-  s.test_files = [
-    "spec/spec_helper.rb",
-    "spec/translate_spec.rb"
-  ]
 
   if s.respond_to? :specification_version then
     s.specification_version = 3

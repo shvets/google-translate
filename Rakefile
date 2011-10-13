@@ -4,9 +4,6 @@ require 'rubygems' unless RUBY_VERSION =~ /1.9.*/
 
 require 'rake/gempackagetask'
 require 'rake/testtask'
-require 'rspec/core/rake_task'
-require 'rake/rdoctask'
-require 'rcov/rcovtask'
 
 task :default => :gemspec
 
@@ -74,22 +71,34 @@ end
 #  task.verbose = false
 #end
 
-RSpec::Core::RakeTask.new do |task|
-  task.pattern = 'spec/**/*_spec.rb'
-  task.verbose = false
+if defined? RSpec::Core::RakeTask
+  require 'rspec/core/rake_task'
+  
+  RSpec::Core::RakeTask.new do |task|
+    task.pattern = 'spec/**/*_spec.rb'
+    task.verbose = false
+  end  
+end  
+
+if defined? Rake::RDocTask
+  require 'rake/rdoctask'
+
+  Rake::RDocTask.new do |rdoc|
+    rdoc.rdoc_dir = 'rdoc'
+    rdoc.title    = 'teststuff'
+    rdoc.options << '--line-numbers' << '--inline-source'
+    rdoc.rdoc_files.include('README*')
+    rdoc.rdoc_files.include('lib/**/*.rb')
+  end
 end
 
-Rake::RDocTask.new do |rdoc|
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'teststuff'
-  rdoc.options << '--line-numbers' << '--inline-source'
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-end
+if defined? Rcov::RcovTask
+  require 'rcov/rcovtask'
 
-Rcov::RcovTask.new do |task|
-  task.libs << 'test'
-  task.test_files = FileList['test/**/*_test.rb']
-  task.verbose = true
+  Rcov::RcovTask.new do |task|
+    task.libs << 'test'
+    task.test_files = FileList['test/**/*_test.rb']
+    task.verbose = true
+  end
 end
 

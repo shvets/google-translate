@@ -28,14 +28,21 @@ class Translate
   def display result
     r1, r2 = *result
 
-    if RUBY_PLATFORM =~ /mswin32/
-    #  File.open("temp.txt", "w") {|f| f.write text }
-    #  %x[notepad temp.txt]
-
-      puts (r2.empty? ? r1 : r2 )
+    if r2.empty?
+      puts r1
     else
       puts r1
+      puts r2      
     end
+    
+    # if RUBY_PLATFORM =~ /mswin32/
+    # #  File.open("temp.txt", "w") {|f| f.write text }
+    # #  %x[notepad temp.txt]
+    # 
+    #   puts (r2.empty? ? r1 : r2)
+    # else
+    #  puts (r2.empty? ? r1 : r2)
+    # end
   end
 
   def run
