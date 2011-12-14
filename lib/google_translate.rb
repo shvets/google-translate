@@ -46,6 +46,7 @@ module Google
           raise(TranslateServerIsDown) if (!result || result.empty?)
 
   #        raise(InvalidResponse, result["responseDetails"]) if response.code.to_i != 200 # success
+          final_result = ""
           
           result[0].each do |res|
             final_result << res[0]
