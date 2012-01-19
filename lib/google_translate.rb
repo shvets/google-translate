@@ -69,7 +69,7 @@ module Google
      raise(MissingTextLanguage) if test_text.nil?
 
      begin
-       url = GOOGLE_TRANSLATE_SERVICE_URL + "/translate_a/t?client=t&text=#{test_text}&hl=en&sl=auto&tl=en&multires=1&prev=btn&ssel=0&tsel=4&uptl=#{to}&alttl=#{from}&sc=1"
+       url = GOOGLE_TRANSLATE_SERVICE_URL + "/translate_a/t?client=t&text=#{test_text}&hl=en&sl=auto&tl=en&multires=1&prev=btn&ssel=0&tsel=4&uptl=en&alttl=en&sc=1"
 
        open(URI.escape(url), 'User-Agent' => 'Mozilla 8.0') do |stream|
          #i = Iconv.new('UTF-8', stream.charset)
