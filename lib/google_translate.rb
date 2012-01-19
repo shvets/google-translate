@@ -64,20 +64,32 @@ module Google
       end
     end
 
-#    def detect_language(test_text)
+   def detect_language(test_text)
   
-      # raise(MissingTestText) if test_text.nil?
+     raise(MissingTextLanguage) if test_text.nil?
 
-      # begin
-      #   response = self.class.get("/detect", :query => {:q => test_text})
-      #   response = (response && response.parsed_response) ? response.parsed_response : nil
-      #   raise(TranslateServerIsDown) if (!response || response.empty?)
-      #   response_data = response["responseData"]
-      #   return response_data
-      # rescue HTTParty::ResponseError
-      #   raise(TranslateServerIsDown)
-      # end
-    #end
+     begin
+       url = GOOGLE_TRANSLATE_SERVICE_URL + "/translate_a/t?client=t&text=#{test_text}&hl=en&sl=auto&tl=en&multires=1&prev=btn&ssel=0&tsel=4&uptl=#{to}&alttl=#{from}&sc=1"
+
+       open(URI.escape(url), 'User-Agent' => 'Mozilla 8.0') do |stream|
+         #i = Iconv.new('UTF-8', stream.charset)
+         
+         #content = i.iconv(stream.read)
+         content = stream.read
+
+         s = content.split(',').collect {|s| s == '' ? "\"\"" : s}.join(",")
+
+         result = JSON.parse(s)
+
+         raise(TranslateServerIsDown) if (!result || result.empty?)
+           
+         result[2]
+         
+       end
+     rescue Exception => e
+        raise(TranslateServerIsDown)
+     end
+    end
   
     def supported_languages
       fetch_languages(GOOGLE_TRANSLATE_SERVICE_URL , [])
