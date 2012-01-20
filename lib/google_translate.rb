@@ -4,6 +4,8 @@ require 'open-uri'
 
 require 'cgi'
 require 'json'
+
+include ActionView::Helpers::TextHelper
 #require 'iconv'
 
 module Google
@@ -69,8 +71,8 @@ module Google
      raise(MissingTextLanguage) if test_text.nil?
 
      begin
-       url = GOOGLE_TRANSLATE_SERVICE_URL + "/translate_a/t?client=t&text=#{test_text}&hl=en&sl=auto&tl=en&multires=1&prev=btn&ssel=0&tsel=4&uptl=en&alttl=en&sc=1"
-
+       url = GOOGLE_TRANSLATE_SERVICE_URL + "/translate_a/t?client=t&text=#{check_text_size(test_text)}&hl=en&sl=auto&tl=en&multires=1&prev=btn&ssel=0&tsel=4&uptl=en&alttl=en&sc=1"
+       
        open(URI.escape(url), 'User-Agent' => 'Mozilla 8.0') do |stream|
          #i = Iconv.new('UTF-8', stream.charset)
          
@@ -96,6 +98,14 @@ module Google
     end
 
     private
+    
+    def check_text_size(text)
+      if text.length >= 1230
+    		text = truncate(text, :length => 1200, :separator => " ", :omission => "")
+    	end
+    	
+    	return text
+    end
 
     def fetch_languages(request, keys)
       response = {}
