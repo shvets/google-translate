@@ -50,6 +50,8 @@ module Google
         concat_result(from, to, result, split_text["last_text"], options)
       end
       
+      puts 
+      
       return result
     end
     
@@ -75,7 +77,7 @@ module Google
           final_result << res[0]
         end
 
-        final_result
+        return final_result
       end
     end
 
@@ -83,6 +85,9 @@ module Google
       raise(MissingTextLanguage) if test_text.nil?
 
       begin
+        puts "---------------------------------"
+        puts check_text_size(test_text)["text"]
+        puts "---------------------------------"
         url = GOOGLE_TRANSLATE_SERVICE_URL + "/translate_a/t?client=t&text=#{check_text_size(test_text)["text"]}&hl=en&sl=auto&tl=en&multires=1&prev=btn&ssel=0&tsel=4&uptl=en&alttl=en&sc=1"
        
         open(URI.escape(url), 'User-Agent' => 'Mozilla 8.0') do |stream|
