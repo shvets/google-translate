@@ -55,7 +55,7 @@ module Google
     
     def translate_helper(from, to, from_text, options={})
 
-      url = GOOGLE_TRANSLATE_SERVICE_URL + "/translate_a/t?client=t&text=#{CGI::escape(from_text)}&hl=#{from}&sl=auto&tl=#{to}&multires=1&prev=btn&ssel=0&tsel=4&uptl=#{to}&alttl=#{from}&sc=1"
+      url = GOOGLE_TRANSLATE_SERVICE_URL + "/translate_a/t?client=t&text=#{CGI::escape(from_text)}&hl=#{from}&sl=#{from}&tl=#{to}&multires=1&prev=btn&ssel=0&tsel=4&uptl=#{to}&alttl=#{from}&sc=1"
 
       open(url, 'User-Agent' => 'Mozilla 8.0') do |stream|
         #i = Iconv.new('UTF-8', stream.charset)
