@@ -2,7 +2,7 @@
 
 $:.unshift(File::join(File::dirname(File::dirname(__FILE__)), "lib"))
 
-require 'rubygems' unless RUBY_VERSION =~ /1.9.*/
+require 'rubygems' unless defined?(Gem)
 require 'google_translate'
 
 #$KCODE='u'
