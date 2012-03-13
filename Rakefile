@@ -1,8 +1,8 @@
 # Rakefile for google-translate
 
-require 'rubygems' unless RUBY_VERSION =~ /1.9.*/
+require 'rubygems' unless defined?(Gem)
 
-require 'rake/gempackagetask'
+#require 'rubygems/package_task'
 require 'rake/testtask'
 
 task :default => :gemspec
@@ -27,8 +27,6 @@ begin
       gemspec.executables = ['translate', 't']
       gemspec.requirements = ["none"]
       gemspec.bindir = "bin"
-    
-      gemspec.add_bundler_dependencies
     end
   rescue LoadError
     puts "Jeweler not available. Install it s with: [sudo] gem install jeweler"
@@ -71,7 +69,7 @@ end
 #  task.verbose = false
 #end
 
-if defined? RSpec::Core::RakeTask
+unless defined? RSpec::Core::RakeTask
   require 'rspec/core/rake_task'
   
   RSpec::Core::RakeTask.new do |task|
@@ -80,8 +78,8 @@ if defined? RSpec::Core::RakeTask
   end  
 end  
 
-if defined? Rake::RDocTask
-  require 'rake/rdoctask'
+unless defined? Rake::RDocTask
+  require 'rdoc/task'
 
   Rake::RDocTask.new do |rdoc|
     rdoc.rdoc_dir = 'rdoc'
@@ -92,7 +90,7 @@ if defined? Rake::RDocTask
   end
 end
 
-if defined? Rcov::RcovTask
+unless defined? Rcov::RcovTask
   require 'rcov/rcovtask'
 
   Rcov::RcovTask.new do |task|
