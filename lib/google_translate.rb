@@ -5,6 +5,9 @@ require 'open-uri'
 require 'cgi'
 require 'json'
 
+include ActionView::Helpers::TextHelper
+#require 'iconv'
+
 module Google
 
   Language = Struct.new(:name, :code) do
@@ -28,51 +31,91 @@ module Google
       raise(MissingFromLanguage) if from.nil?
       raise(MissingToLanguage) if to.nil?
       raise(MissingTextLanguage) if from_text.nil?
-
+      
       begin
-        url = GOOGLE_TRANSLATE_SERVICE_URL + "/translate_a/t?client=t&text=#{from_text}&hl=#{from}&sl=auto&tl=#{to}&multires=1&prev=btn&ssel=0&tsel=4&uptl=#{to}&alttl=#{from}&sc=1"
-
-        open(URI.escape(url)) do |stream|
-          content = stream.read
-
-          s = content.split(',').collect {|s| s == '' ? "\"\"" : s}.join(",")
-
-          result = JSON.parse(s)
-
-          raise(TranslateServerIsDown) if (!result || result.empty?)
-
-  #        raise(InvalidResponse, result["responseDetails"]) if response.code.to_i != 200 # success
-
-          r1 = result[0][0][0]
-          r2 = result[0][0][2]
-
-          [r1, r2]
-        end
+        result = ""
+        
+        return concat_result(from, to, result, from_text, options)
+        
       rescue Exception => e
          raise(TranslateServerIsDown)
       end
     end
+    
+    def concat_result(from, to, result, from_text, options)
+      split_text = check_text_size(from_text)
+      result << translate_helper(from, to, split_text[:text], options)
+      
+      if !split_text[:last_text].blank?
+        concat_result(from, to, result, split_text[:last_text], options)
+      end
+      
+      return result
+    end
+    
+    def translate_helper(from, to, from_text, options={})
 
-#    def detect_language(test_text)
-  
-      # raise(MissingTestText) if test_text.nil?
+      url = GOOGLE_TRANSLATE_SERVICE_URL + "/translate_a/t?client=t&text=#{CGI::escape(from_text)}&hl=#{to}&sl=#{from}&tl=#{to}&multires=1&prev=btn&ssel=0&tsel=4&uptl=#{to}&alttl=#{from}&sc=1"
 
-      # begin
-      #   response = self.class.get("/detect", :query => {:q => test_text})
-      #   response = (response && response.parsed_response) ? response.parsed_response : nil
-      #   raise(TranslateServerIsDown) if (!response || response.empty?)
-      #   response_data = response["responseData"]
-      #   return response_data
-      # rescue HTTParty::ResponseError
-      #   raise(TranslateServerIsDown)
-      # end
-    #end
+      open(url, 'User-Agent' => 'Mozilla 8.0') do |stream|
+        #i = Iconv.new('UTF-8', stream.charset)
+
+        #content = i.iconv(stream.read)
+        content = stream.read
+
+        s = content.split(',').collect {|s| s == '' ? "\"\"" : s}.join(",")
+
+        result = JSON.parse(s)
+
+        raise(TranslateServerIsDown) if (!result || result.empty?)
+
+        final_result = ""
+
+        result[0].each do |res|
+          final_result << res[0]
+        end
+
+        return final_result
+      end
+    end
+
+    def detect_language(test_text)
+      raise(MissingTextLanguage) if test_text.nil?
+
+      begin
+        url = GOOGLE_TRANSLATE_SERVICE_URL + "/translate_a/t?client=t&text=#{check_text_size(test_text)[:text]}&hl=en&sl=auto&tl=en&multires=1&prev=btn&ssel=0&tsel=4&uptl=en&alttl=en&sc=1"
+       
+        open(URI.escape(url), 'User-Agent' => 'Mozilla 8.0') do |stream|
+         content = stream.read
+         s = content.split(',').collect {|s| s == '' ? "\"\"" : s}.join(",")
+         result = JSON.parse(s)
+
+         raise(TranslateServerIsDown) if (!result || result.empty?)
+         
+         result[2]
+         
+        end
+      rescue Exception => e
+        raise(TranslateServerIsDown)
+      end
+    end
   
     def supported_languages
       fetch_languages(GOOGLE_TRANSLATE_SERVICE_URL , [])
     end
 
     private
+    
+    def check_text_size(text)
+      result = {:text => text, :last_text => ""}
+      
+      if text.length >= 1230
+    		result[:text] = truncate(text, :length => 1200, :separator => " ", :omission => "")
+    		result[:last_text] = text[result[:text].length, text.length]
+    	end
+    	
+    	return result
+    end
 
     def fetch_languages(request, keys)
       response = {}
