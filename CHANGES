@@ -47,4 +47,4 @@
 
 == Version 0.8.6
 
-* Fix auto detect source language
+* Fix auto detect source language; fix countries list; refactoring code
