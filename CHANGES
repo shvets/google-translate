@@ -44,3 +44,7 @@
 == Version 0.8.5
 
 * Stop using translate API, start using scraping google translate
+
+== Version 0.8.6
+
+* Fix auto detect source language

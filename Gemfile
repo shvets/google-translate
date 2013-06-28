@@ -1,14 +1,21 @@
-source 'http://rubygems.org'
+source "https://rubygems.org"
 
-gem "json_pure"
+group :default do
+  gem "json_pure"
+end
 
 group :development do
-  gem "jeweler"
+  gem "gemspec_deps_gen"
   gem "gemcutter"
 end
 
 group :test do
-  gem "mocha"
   gem "rspec"
-  gem "rcov"
 end
+
+group :debug do
+  gem "ruby-debug-base19x", "0.11.30.pre12"
+  gem "ruby-debug-ide", "0.4.17"
+end
+
+

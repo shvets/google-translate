@@ -17,7 +17,7 @@ class Translate
   TEXT
 
   def initialize
-    @translator = Google::Translator.new
+    @translator = GoogleTranslate.new
   end
 
   def print_languages list, title
@@ -59,27 +59,23 @@ class Translate
 
       print_languages hash[:from_languages], "From Languages:"
       print_languages hash[:to_languages], "To Languages:"
-    #when 'detect' then
-    #  language = @translator.detect_language(ARGV.shift)
-    #
-    #  puts "Language: #{language.inspect}"
     when /(.*):(.*)/ then
       from_text = ARGV.join(' ')
       from = $1
       to = $2
 
       display(@translator.translate(from.to_sym, to.to_sym, from_text))
-    #when /(.*)/ then
-    #  from_text = ARGV.join(' ')
-    #
-    #  from = @translator.detect_language(from_text)['language']
-    #  to = $1
-    #
-    #  begin
-    #    display(@translator.translate(from.to_sym, to.to_sym, from_text))
-    #  rescue Exception => e
-    #    puts "Error: " + e.message
-    #  end
+    when /(.*)/ then
+      from_text = ARGV.join(' ')
+
+      from = "auto"
+      to = $1
+
+      begin
+        display(@translator.translate(from.to_sym, to.to_sym, from_text))
+      rescue Exception => e
+        puts "Error: " + e.message
+      end
     end
   end
 end

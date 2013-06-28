@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="RUBY_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="gem" name="Gem">
+      <configuration>
+        <option name="GEM_APP_ROOT_PATH" value="" />
+        <option name="GEM_APP_TEST_PATH" value="" />
+        <option name="GEM_APP_LIB_PATH" value="" />
+      </configuration>
+    </facet>
+  </component>
   <component name="GemRequirementsHolder" version="3">
     <requirement>
       <requirement>
@@ -50,19 +59,20 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="jeweler (v1.5.1, RVM: ruby-1.8.7-p352 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rcov (v0.9.9, RVM: ruby-1.8.7-p352 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rspec-mocks (v2.1.0, RVM: ruby-1.8.7-p352 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rspec-core (v2.1.0, RVM: ruby-1.8.7-p352 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mocha (v0.9.9, RVM: ruby-1.8.7-p352 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="diff-lcs (v1.1.2, RVM: ruby-1.8.7-p352 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rspec (v2.1.0, RVM: ruby-1.8.7-p352 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="gemcutter (v0.6.1, RVM: ruby-1.8.7-p352 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rake (v0.8.7, RVM: ruby-1.8.7-p352 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="git (v1.2.5, RVM: ruby-1.8.7-p352 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.0.21, RVM: ruby-1.8.7-p352 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rspec-expectations (v2.1.0, RVM: ruby-1.8.7-p352 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="json_pure (v1.6.1, RVM: ruby-1.8.7-p352 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.3.1, RVM: ruby-1.9.3-p429 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="debugger-ruby_core_source (v1.2.3, RVM: ruby-1.9.3-p429 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="diff-lcs (v1.1.3, RVM: ruby-1.9.3-p429 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="file_utils (v1.0.6, RVM: ruby-1.9.3-p429 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="gemcutter (v0.7.1, RVM: ruby-1.9.3-p429 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="gemspec_deps_gen (v1.0.5, RVM: ruby-1.9.3-p429 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="json_pure (v1.6.5, RVM: ruby-1.9.3-p429 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rake (v10.1.0, RVM: ruby-1.9.3-p429 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rspec (v2.8.0, RVM: ruby-1.9.3-p429 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rspec-core (v2.8.0, RVM: ruby-1.9.3-p429 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rspec-expectations (v2.8.0, RVM: ruby-1.9.3-p429 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rspec-mocks (v2.8.0, RVM: ruby-1.9.3-p429 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ruby-debug-base19x (v0.11.30.pre12, RVM: ruby-1.9.3-p429 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ruby-debug-ide (v0.4.17, RVM: ruby-1.9.3-p429 [google-translate]) [gem]" level="application" />
   </component>
 </module>
 
