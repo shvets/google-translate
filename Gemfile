@@ -13,9 +13,9 @@ group :test do
   gem "rspec"
 end
 
-group :debug do
-  gem "ruby-debug-base19x", "0.11.30.pre12"
-  gem "ruby-debug-ide", "0.4.17"
-end
+#group :debug do
+#  gem "ruby-debug-base19x", "0.11.30.pre12"
+#  gem "ruby-debug-ide", "0.4.17"
+#end
 
 

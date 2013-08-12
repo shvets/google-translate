@@ -26,9 +26,9 @@ describe GoogleTranslate do
     r.size.should be > 0
   end
 
-  it "should return unreliable flag if language is not recognized" do
-    subject.detect_language("azafretmkldt")['isReliable'].should be_false
-  end
+  #it "should return unreliable flag if language is not recognized" do
+  #  subject.detect_language("azafretmkldt")['isReliable'].should be_false
+  #end
 
   it "should return list of supported languages" do
     languages = subject.supported_languages
