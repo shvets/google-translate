@@ -15,7 +15,7 @@ task :gen do
   generator.generate_dependencies "spec", "#{project_name}.gemspec.erb", "#{project_name}.gemspec"
 end
 
-task :build do
+task :build => :gen do
   system "gem build #{project_name}.gemspec"
 end
 

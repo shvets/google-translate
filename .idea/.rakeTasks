@@ -4,4 +4,4 @@ You are allowed to:
 1. Remove rake task
 2. Add existing rake tasks
 To add existing rake tasks automatically delete this file and reload the project.
---><RakeGroup description="" fullCmd="" taksId="rake"><RakeTask description="Run RSpec code examples" fullCmd="spec" taksId="spec" /><RakeTask description="" fullCmd="build" taksId="build" /><RakeTask description="" fullCmd="install" taksId="install" /><RakeTask description="" fullCmd="release" taksId="release" /></RakeGroup></Settings>
+--><RakeGroup description="" fullCmd="" taksId="rake" /></Settings>
