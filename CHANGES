@@ -52,3 +52,7 @@
 == Version 0.8.7
 
 * Changes in project configuration
+
+== Version 0.8.8
+
+* Adding version to gemspec.

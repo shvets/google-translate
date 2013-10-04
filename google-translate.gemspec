@@ -15,6 +15,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
   spec.version       = GoogleTranslate::VERSION
+  spec.license       = "MIT"
 
   
   spec.add_runtime_dependency "json_pure", [">= 0"]
