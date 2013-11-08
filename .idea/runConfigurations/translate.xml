@@ -1,0 +1,26 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="translate" type="RubyRunConfigurationType" factoryName="Ruby">
+    <module name="google-translate" />
+    <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
+    <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/bin" />
+    <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+    <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+    <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+    <envs />
+    <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+    <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+    <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" track_test_folders="true" runner="rcov">
+      <COVERAGE_PATTERN ENABLED="true">
+        <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+      </COVERAGE_PATTERN>
+    </EXTENSION>
+    <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+    <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/bin/translate" />
+    <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="en:ru -s how are you?" />
+    <RunnerSettings RunnerId="RubyDebugRunner" />
+    <RunnerSettings RunnerId="RubyRunner" />
+    <ConfigurationWrapper RunnerId="RubyDebugRunner" />
+    <ConfigurationWrapper RunnerId="RubyRunner" />
+    <method />
+  </configuration>
+</component>

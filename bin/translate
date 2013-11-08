@@ -4,6 +4,42 @@ $:.unshift(File::join(File::dirname(File::dirname(__FILE__)), "lib"))
 
 require 'google_translate/translate_cli'
 
-cli = TranslateCli.new
+index = 0
 
-cli.run ARGV
+if ARGV.size == 0
+  puts TranslateCLI::USAGE
+elsif ARGV.size == 1
+  if ARGV[0] == 'version' or ARGV[0] == '--version' or ARGV[0] == '-v'
+    TranslateCLI.start ["version"]
+  elsif ARGV[0] == 'list'
+    TranslateCLI.start ["list"]
+  end
+else
+  params = []
+  say = false
+
+  index = 0
+
+  while index < ARGV.size do
+    param = ARGV[index]
+
+    if param =~ /--say/ or param =~ /-s/
+      say = true
+    else
+      params << param
+    end
+
+    index = index + 1
+  end
+
+  from, to, text = case params.shift
+    when /(.*):(.*)/ then
+      [$1, $2, params.join(' ')]
+    when /(.*)/ then
+      ["auto", $1, params.join(' ')]
+    else
+      ['en', '', '']
+  end
+
+  TranslateCLI.start ["translate", "--say=#{say}", from.to_sym, to.to_sym, text]
+end

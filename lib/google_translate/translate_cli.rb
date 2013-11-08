@@ -1,72 +1,72 @@
+require "thor"
 require 'google_translate'
+require 'google_translate/version'
 
-class TranslateCli
-  USAGE= <<-TEXT
+class TranslateCLI < Thor
+  USAGE = <<-LONGDESC
+    Simple client for Google Translate API.
+
     Usage:
+      translate -v                   - displays the version
       translate list                 - displays the list of supported languages
       translate en:ru "hello world"  - translates from en to ru
       translate ru "hello world"     - translated from auto-detected language to ru
-  TEXT
+  LONGDESC
 
-  def initialize
-    @translator = GoogleTranslate.new
+  desc "version", "displays version"
+  def version
+    puts "Google Translate Version: #{GoogleTranslate::VERSION}"
   end
 
-  def print_languages list, title
+  desc "list", "displays the list of supported languages"
+  def list
+    translator = GoogleTranslate.new
+
+    from_languages, to_languages = translator.supported_languages
+
+    print_languages "From Languages:", from_languages
+    print_languages "To Languages:", to_languages
+  end
+
+  long_desc USAGE
+  desc "thanslate text", "thanslates the text"
+  option :say, :aliases => "-s"
+  def translate from_lang, to_lang, text
+    translator = GoogleTranslate.new
+
+    result = translator.translate(from_lang, to_lang, text)
+
+    translation = result[0][0][0]
+    translit = result[0][0][2]
+    synonyms = result[5][0]
+
+    puts "Translation: #{translation}"
+
+    display_synonyms(synonyms)
+
+    say = options[:say] ? (options[:say] == 'true') : false
+
+    if say and !!(RUBY_PLATFORM =~ /darwin/i)
+      translator.say(from_lang, text)
+      translator.say(from_lang, translit)
+    end
+  end
+
+  private
+
+  def display_synonyms synonyms
+    puts "Synonyms:"
+
+    synonyms_size = synonyms[1].to_i
+
+    (1..synonyms_size).each do |index|
+      puts synonyms[2][index][0]
+    end
+  end
+
+  def print_languages title, list
     puts title
     puts list.join(', ')
   end
 
-  def display result
-    r1, r2 = *result
-
-    if r2.empty?
-      puts r1
-    else
-      puts r1
-      puts r2
-    end
-
-    # if RUBY_PLATFORM =~ /mswin32/
-    # #  File.open("temp.txt", "w") {|f| f.write text }
-    # #  %x[notepad temp.txt]
-    #
-    #   puts (r2.empty? ? r1 : r2)
-    # else
-    #  puts (r2.empty? ? r1 : r2)
-    # end
-  end
-
-  def run params
-    if(params.size == 0)
-      puts USAGE
-    else
-      case params.shift
-        when /(-v)|(--version)/ then
-          puts "Version: #{File.open(File::dirname(__FILE__) + "/../VERSION").readlines().first}"
-        when 'list' then
-          hash = @translator.supported_languages
-
-          print_languages hash[:from_languages], "From Languages:"
-          print_languages hash[:to_languages], "To Languages:"
-        when /(.*):(.*)/ then
-          from_text = params.join(' ')
-          from = $1
-          to = $2
-
-          display(@translator.translate(from.to_sym, to.to_sym, from_text))
-        when /(.*)/ then
-          from_text = params.join(' ')
-
-          from = "auto"
-          to = $1
-
-          begin
-            display(@translator.translate(from.to_sym, to.to_sym, from_text))
-          rescue Exception => e
-            puts "Error: " + e.message
-          end
-      end
-    end
-  end
 end

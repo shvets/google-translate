@@ -1,70 +1,81 @@
-# google_translate.rb
+#encoding: UTF-8
 
-require 'open-uri'
-
-require 'cgi'
+require 'net/http'
 require 'json'
+require 'tempfile'
 
 class GoogleTranslate
   GOOGLE_TRANSLATE_SERVICE_URL = "http://translate.google.com"
 
-  def self.Exception(*names)
-    cl = Module === self ? self : Object
-
-    names.each { |n| cl.const_set(n, Class.new(Exception)) }
-  end
-
-  Exception :MissingFromLanguage, :MissingToLanguage, :MissingTextLanguage, :TranslateServerIsDown,
-            :InvalidResponse, :MissingText, :MissingTestText
-
-  def translate(from, to, from_text, options={})
-    raise(MissingFromLanguage) if from.nil?
-    raise(MissingToLanguage) if to.nil?
-    raise(MissingTextLanguage) if from_text.nil?
-
-    begin
-      url = GOOGLE_TRANSLATE_SERVICE_URL + "/translate_a/t?client=t&text=#{from_text}&hl=#{from}&sl=#{from}&tl=#{to}&multires=1&prev=btn&ssel=0&tsel=4&uptl=#{to}&alttl=#{from}&sc=1"
-
-      open(URI.escape(url)) do |stream|
-        content = stream.read
-
-        s = content.split(',').collect { |s| s == '' ? "\"\"" : s }.join(",")
-
-        result = JSON.parse(s)
-
-        raise(TranslateServerIsDown) if (!result || result.empty?)
-
-        #        raise(InvalidResponse, result["responseDetails"]) if response.code.to_i != 200 # success
-
-        r1 = result[0][0][0]
-        r2 = result[0][0][2]
-
-        [r1, r2]
-      end
-    rescue Exception => e
-      raise(TranslateServerIsDown)
-    end
-  end
-
   def supported_languages
-    fetch_languages(GOOGLE_TRANSLATE_SERVICE_URL, [])
+    response = call_service GOOGLE_TRANSLATE_SERVICE_URL
+
+    from_languages = collect_languages response.body, 0, 'sl', 'gt-sl'
+    to_languages   = collect_languages response.body, 1, 'tl', 'gt-tl'
+
+    [from_languages, to_languages]
+  end
+
+  def translate(from_lang, to_lang, text, options={})
+    raise("Missing 'from' language") unless from_lang
+    raise("Missing 'to' language") unless to_lang
+    raise("Missing text for translation") unless text
+
+    result = JSON.parse(call_translate_service(from_lang, to_lang, text))
+
+    raise("Translate Server is down") if (!result || result.empty?)
+
+    result
+  end
+
+  def say lang, text
+    speech_content = call_speech_service(lang, text)
+
+    file = Tempfile.new('.google_translate_speech')
+
+    file.write(speech_content)
+
+    file.close
+
+    system "afplay #{file.path}"
+
+    file.unlink
   end
 
   private
 
-  def fetch_languages(request, keys)
-    response = {}
-    open(URI.escape(request)) do |stream|
-      content = stream.read
+  def translate_url(from_lang, to_lang)
+    "#{GOOGLE_TRANSLATE_SERVICE_URL}/translate_a/t?client=t&sl=#{from_lang}&tl=#{to_lang}&hl=pl&sc=2&ie=UTF-8&oe=UTF-8&prev=enter&ssel=0&tsel=0&"
+  end
 
-      from_languages = collect_languages content, 0, 'sl', 'gt-sl'
-      to_languages   = collect_languages content, 1, 'tl', 'gt-tl'
+  def speech_url(lang)
+    "#{GOOGLE_TRANSLATE_SERVICE_URL}/translate_tts?tl=#{lang}&ie=UTF-8&oe=UTF-8"
+  end
 
-      response[:from_languages] = from_languages
-      response[:to_languages]   = to_languages
-    end
+  def call_service url, text=nil
+    uri = URI.parse(URI.escape(url))
 
-    response
+    http = Net::HTTP.new(uri.host, uri.port)
+    request = Net::HTTP::Post.new(uri.request_uri)
+    request.set_form_data(text: text)
+
+    http.request(request)
+  end
+
+  def call_translate_service from_lang, to_lang, text
+    url = translate_url(from_lang, to_lang)
+
+    response = call_service url, text
+
+    response.body.split(',').collect { |s| s == '' ? "\"\"" : s }.join(",") # fix json object
+  end
+
+  def call_speech_service lang, text
+    url = speech_url(lang)
+
+    response = call_service url, text
+
+    response.body
   end
 
   def collect_languages buffer, index, tag_name, tag_id

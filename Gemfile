@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 group :default do
   gem "json_pure"
+  gem "thor"
 end
 
 group :development do
@@ -11,6 +12,7 @@ end
 
 group :test do
   gem "rspec"
+  gem "awesome_print"
 end
 
 #group :debug do

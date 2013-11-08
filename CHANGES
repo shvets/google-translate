@@ -56,3 +56,9 @@
 == Version 0.8.8
 
 * Adding version to gemspec.
+
+== Version 1.0.0
+
+* Adding speech flag.
+
+* Adding synonims.

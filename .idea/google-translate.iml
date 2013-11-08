@@ -53,12 +53,50 @@
       <source from="Gemfile" />
     </requirement>
   </component>
+  <component name="ModuleRunConfigurationManager">
+    <configuration default="false" name="translate" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="google-translate" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e STDOUT.sync=true;STDERR.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/bin" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/bin/translate" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="en:ru -s how are you?" />
+      <RunnerSettings RunnerId="RubyDebugRunner" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyDebugRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+  </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.bundle" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="RVM: ruby-1.9.3-p448 [google-translate]" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="awesome_print (v1.2.0, RVM: ruby-1.9.3-p448 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.3.5, RVM: ruby-1.9.3-p448 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="diff-lcs (v1.2.4, RVM: ruby-1.9.3-p448 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="file_utils (v1.0.7, RVM: ruby-1.9.3-p448 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="gemcutter (v0.7.1, RVM: ruby-1.9.3-p448 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="gemspec_deps_gen (v1.1.1, RVM: ruby-1.9.3-p448 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="json_pure (v1.8.0, RVM: ruby-1.9.3-p448 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rspec (v2.14.1, RVM: ruby-1.9.3-p448 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rspec-core (v2.14.4, RVM: ruby-1.9.3-p448 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rspec-expectations (v2.14.1, RVM: ruby-1.9.3-p448 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rspec-mocks (v2.14.3, RVM: ruby-1.9.3-p448 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="thor (v0.18.1, RVM: ruby-1.9.3-p448 [google-translate]) [gem]" level="application" />
   </component>
 </module>
 

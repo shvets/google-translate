@@ -1,6 +1,4 @@
 #!/usr/bin/env ruby
 
-require 'rubygems' unless RUBY_VERSION =~ /1.9.*/
-
 load File.dirname(__FILE__) + '/translate'
 
