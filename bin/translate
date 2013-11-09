@@ -4,8 +4,6 @@ $:.unshift(File::join(File::dirname(File::dirname(__FILE__)), "lib"))
 
 require 'google_translate/translate_cli'
 
-index = 0
-
 if ARGV.size == 0
   puts TranslateCLI::USAGE
 elsif ARGV.size == 1
@@ -16,7 +14,7 @@ elsif ARGV.size == 1
   end
 else
   params = []
-  say = false
+  say = ENV['say'] ? (ENV['say'] == 'true') : false
 
   index = 0
 

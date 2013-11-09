@@ -7,10 +7,12 @@ class TranslateCLI < Thor
     Simple client for Google Translate API.
 
     Usage:
-      translate -v                   - displays the version
-      translate list                 - displays the list of supported languages
-      translate en:ru "hello world"  - translates from en to ru
-      translate ru "hello world"     - translated from auto-detected language to ru
+      translate                      # displays usage
+      translate -v                   # displays the version
+      translate list                 # displays the list of supported languages
+      translate en:ru Hello world    # translates from English to Russian
+      translate ru Hello world       # translates to Russian from auto-detected language
+      translate -s ru Hello world    # translates and tries to say it
   LONGDESC
 
   desc "version", "displays version"
@@ -38,29 +40,33 @@ class TranslateCLI < Thor
 
     translation = result[0][0][0]
     translit = result[0][0][2]
-    synonyms = result[5][0]
 
     puts "Translation: #{translation}"
+    puts "Translit: #{translit}" unless translit.size == 0
 
-    display_synonyms(synonyms)
+    display_synonyms(result)
 
     say = options[:say] ? (options[:say] == 'true') : false
 
     if say and !!(RUBY_PLATFORM =~ /darwin/i)
       translator.say(from_lang, text)
-      translator.say(from_lang, translit)
+      translator.say(to_lang, translation)
     end
   end
 
   private
 
-  def display_synonyms synonyms
-    puts "Synonyms:"
+  def display_synonyms result
+    if result[5].size > 5
+      synonyms = result[5][0][2]
 
-    synonyms_size = synonyms[1].to_i
+      if synonyms.size > 1
+        puts "Synonyms:"
 
-    (1..synonyms_size).each do |index|
-      puts synonyms[2][index][0]
+        (1..synonyms.size-1).each do |index|
+          puts synonyms[index][0]
+        end
+      end
     end
   end
 
