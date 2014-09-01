@@ -29,9 +29,9 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
-  gemcutter
-  gemspec_deps_gen
-  json_pure
-  resource_accessor
+  gemcutter (~> 0.7)
+  gemspec_deps_gen (~> 1.1)
+  json_pure (~> 1.8)
+  resource_accessor (~> 1.2)
   rspec
-  thor
+  thor (~> 0.19)
