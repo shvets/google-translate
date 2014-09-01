@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 group :default do
   gem "json_pure"
+  gem "resource_accessor"
   gem "thor"
 end
 

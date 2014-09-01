@@ -43,6 +43,10 @@ or
 
     $ ts ru hello world
 
+Translates and gives extra information (nouns, verbs, synonyms):
+
+    $ t -e ru help
+
 ## Contributing
 
 1. Fork it

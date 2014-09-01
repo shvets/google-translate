@@ -15,6 +15,7 @@ elsif ARGV.size == 1
 else
   params = []
   say = ENV['say'] ? (ENV['say'] == 'true') : false
+  extra = ENV['extra'] ? (ENV['extra'] == 'true') : false
 
   index = 0
 
@@ -23,6 +24,8 @@ else
 
     if param =~ /--say/ or param =~ /-s/
       say = true
+    elsif param =~ /--extra/ or param =~ /-e/
+      extra = true
     else
       params << param
     end
@@ -39,5 +42,5 @@ else
       ['en', '', '']
   end
 
-  TranslateCLI.start ["translate", "--say=#{say}", from.to_sym, to.to_sym, text]
+  TranslateCLI.start ["translate", "--say=#{say}", "--extra=#{extra}", from.to_sym, to.to_sym, text]
 end

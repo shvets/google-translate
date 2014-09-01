@@ -4,7 +4,7 @@ require File.dirname(__FILE__) + '/spec_helper'
 
 require 'google_translate'
 
-describe GoogleTranslate do
+RSpec.describe GoogleTranslate do
 
   it "should raise an error if one of parameters is missing" do
     expect { subject.translate(nil, :ru) }.to raise_error
@@ -17,13 +17,14 @@ describe GoogleTranslate do
   it "should translate test string from one language to another" do
     r = subject.translate(:en, :ru, "hello world!")
     puts r
-    r.size.should be > 0
+
+    expect(r.size).to be > 0
   end
 
   it "should translate test string from one language to another with autodetect" do
     r = subject.translate(:auto, :ru, "hello world!")
     puts r
-    r.size.should be > 0
+    expect(r.size).to be > 0
   end
 
   #it "should return unreliable flag if language is not recognized" do
@@ -31,9 +32,9 @@ describe GoogleTranslate do
   #end
 
   it "should return list of supported languages" do
-    languages = subject.supported_languages
+    from_languages, to_languages = subject.supported_languages
 
-    languages[:from_languages].size.should > 0
-    languages[:to_languages].size.should > 0
+    expect(from_languages.size).to be > 0
+    expect(to_languages.size).to be > 0
   end
 end
