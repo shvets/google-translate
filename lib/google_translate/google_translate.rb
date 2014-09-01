@@ -71,11 +71,10 @@ class GoogleTranslate
     response.body
   end
 
-  def call_service url, text=nil
+  def call_service url
     accessor = ResourceAccessor.new
 
     accessor.get_response url: url
-    #, body: text
   end
 
   def collect_languages buffer, index, tag_name, tag_id
