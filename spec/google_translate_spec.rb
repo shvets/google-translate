@@ -37,4 +37,10 @@ RSpec.describe GoogleTranslate do
     expect(from_languages.size).to be > 0
     expect(to_languages.size).to be > 0
   end
+  
+  it "should replace ,(,)+ to ," do 
+    r = subject.translate(:en, :af, 'beta')
+    puts r
+    expect(r.size).to be > 0
+  end
 end
