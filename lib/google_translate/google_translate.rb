@@ -9,7 +9,7 @@ class GoogleTranslate
   GOOGLE_TRANSLATE_SERVICE_URL = "translate.google.com"
 
   def supported_languages
-    response = call_service GOOGLE_TRANSLATE_SERVICE_URL
+    response = call_service "https://#{GOOGLE_TRANSLATE_SERVICE_URL}"
 
     from_languages = collect_languages response.body, 0, 'sl', 'gt-sl'
     to_languages   = collect_languages response.body, 1, 'tl', 'gt-tl'
