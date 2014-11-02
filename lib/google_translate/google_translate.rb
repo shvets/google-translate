@@ -6,7 +6,8 @@ require 'tempfile'
 require 'resource_accessor'
 
 class GoogleTranslate
-  GOOGLE_TRANSLATE_SERVICE_URL = "translate.google.com"
+  GOOGLE_TRANSLATE_SERVICE_URL = "https://translate.google.com"
+  GOOGLE_SPEECH_SERVICE_URL    = "http://translate.google.com/translate_tts"
 
   def supported_languages
     response = call_service GOOGLE_TRANSLATE_SERVICE_URL
@@ -48,11 +49,15 @@ class GoogleTranslate
   private
 
   def translate_url(from_lang, to_lang)
-    "https://#{GOOGLE_TRANSLATE_SERVICE_URL}/translate_a/single?client=t&sl=#{from_lang}&tl=#{to_lang}&hl=en&dt=bd&dt=ex&dt=ld&dt=md&dt=qc&dt=rw&dt=rm&dt=ss&dt=t&dt=at&dt=sw&ie=UTF-8&oe=UTF-8&prev=btn&rom=1&ssel=0&tsel=0"
+    url = "#{GOOGLE_TRANSLATE_SERVICE_URL}/translate_a/single"
+    params = "client=t&sl=#{from_lang}&tl=#{to_lang}&hl=en&dt=bd&dt=ex&dt=ld&dt=md&dt=qc&dt=rw&dt=rm&dt=ss" +
+             "&dt=t&dt=at&dt=sw&ie=UTF-8&oe=UTF-8&prev=btn&rom=1&ssel=0&tsel=0"
+
+    "#{url}?#{params}"
   end
 
   def speech_url(lang)
-    "http://#{GOOGLE_TRANSLATE_SERVICE_URL}/translate_tts?tl=#{lang}&ie=UTF-8&oe=UTF-8"
+    "#{GOOGLE_SPEECH_SERVICE_URL}?tl=#{lang}&ie=UTF-8&oe=UTF-8"
   end
 
   def call_translate_service from_lang, to_lang, text
