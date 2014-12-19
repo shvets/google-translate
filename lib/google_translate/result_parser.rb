@@ -11,7 +11,7 @@ class ResultParser
   end
 
   def translit
-    result[0][1][2]
+    result[0][1][2] if result[0][1]
   end
 
   def nouns

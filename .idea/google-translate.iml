@@ -219,21 +219,8 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.bundle" />
     </content>
-    <orderEntry type="jdk" jdkName="RVM: ruby-2.1.4 [google-translate]" jdkType="RUBY_SDK" />
+    <orderEntry type="jdk" jdkName="RVM: ruby-2.1.5 [google-translate]" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="awesome_print (v1.2.0, RVM: ruby-2.1.4 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.7.4, RVM: ruby-2.1.4 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="diff-lcs (v1.2.5, RVM: ruby-2.1.4 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="file_utils (v1.0.7, RVM: ruby-2.1.4 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="gemcutter (v0.7.1, RVM: ruby-2.1.4 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="gemspec_deps_gen (v1.1.2, RVM: ruby-2.1.4 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="json_pure (v1.8.1, RVM: ruby-2.1.4 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="resource_accessor (v1.2.3, RVM: ruby-2.1.4 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rspec (v3.0.0, RVM: ruby-2.1.4 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rspec-core (v3.0.4, RVM: ruby-2.1.4 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rspec-expectations (v3.0.4, RVM: ruby-2.1.4 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rspec-mocks (v3.0.4, RVM: ruby-2.1.4 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rspec-support (v3.0.4, RVM: ruby-2.1.4 [google-translate]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="thor (v0.19.1, RVM: ruby-2.1.4 [google-translate]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.7.6, RVM: ruby-2.1.5 [google-translate]) [gem]" level="application" />
   </component>
 </module>

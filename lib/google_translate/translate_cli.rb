@@ -69,7 +69,10 @@ class TranslateCLI < Thor
     end
 
     puts "Translation: #{result_parser.translation}"
-    puts "Translit: #{result_parser.translit}" unless result_parser.translit.size == 0
+
+    if result_parser.translit and result_parser.translit.size > 0
+      puts "Translit: #{result_parser.translit}"
+    end
 
     say = options[:say] ? (options[:say] == 'true') : false
 
