@@ -7,22 +7,22 @@ require 'google_translate'
 RSpec.describe GoogleTranslate do
 
   it "should raise an error if one of parameters is missing" do
-    expect { subject.translate(nil, :ru) }.to raise_error
+    expect { subject.translate(nil, :ru, text: nil) }.to raise_error
 
-    expect { subject.translate(:en, nil) }.to raise_error
+    expect { subject.translate(:en, nil, text: nil) }.to raise_error
 
     expect { subject.translate(:en, :ru, nil) }.to raise_error
   end
 
   it "should translate test string from one language to another" do
-    r = subject.translate(:en, :ru, "hello world!")
+    r = subject.translate(:en, :ru, "hi")
     puts r
 
     expect(r.size).to be > 0
   end
 
   it "should translate test string from one language to another with autodetect" do
-    r = subject.translate(:auto, :ru, "hello world!")
+    r = subject.translate(:auto, :ru, "hi")
     puts r
     expect(r.size).to be > 0
   end

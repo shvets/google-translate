@@ -1,6 +1,7 @@
 #encoding: UTF-8
 
 require 'net/http'
+require 'uri'
 require 'json'
 require 'tempfile'
 require 'resource_accessor'
@@ -18,12 +19,12 @@ class GoogleTranslate
     [from_languages, to_languages]
   end
 
-  def translate(from_lang, to_lang, text, options={})
+  def translate(from_lang, to_lang, text)
     raise("Missing 'from' language") unless from_lang
     raise("Missing 'to' language") unless to_lang
     raise("Missing text for translation") unless text
 
-    r = call_translate_service(from_lang, to_lang, text)
+    r = call_translate_service(from_lang, to_lang, URI.escape(text))
 
     result = JSON.parse(r.gsub('[,', '['))
 

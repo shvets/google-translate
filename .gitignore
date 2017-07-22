@@ -3,3 +3,4 @@ pkg/
 google-translate.gemspec
 .bundle
 .DS_Store
+.idea
