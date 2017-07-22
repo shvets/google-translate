@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27826e27-f211-4f38-bd71-88309e7ed342" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/commands.thor" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/google-translate.iml" afterPath="$PROJECT_DIR$/.idea/google-translate.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/translate.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/translate.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.ruby-version" afterPath="$PROJECT_DIR$/.ruby-version" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CHANGES" afterPath="$PROJECT_DIR$/CHANGES" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/google-translate.gemspec" afterPath="$PROJECT_DIR$/google-translate.gemspec" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/google_translate/google_translate.rb" afterPath="$PROJECT_DIR$/lib/google_translate/google_translate.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/google_translate/version.rb" afterPath="$PROJECT_DIR$/lib/google_translate/version.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/google_translate_spec.rb" afterPath="$PROJECT_DIR$/spec/google_translate_spec.rb" />
     </list>
     <ignored path=".idea/workspace.xml" />
     <ignored path="google-translate.iws" />
@@ -626,7 +614,7 @@
       <option name="presentableId" value="Default" />
       <updated>1284473756960</updated>
       <workItem from="1467130411041" duration="2403000" />
-      <workItem from="1500735135386" duration="3094000" />
+      <workItem from="1500735135386" duration="3117000" />
     </task>
     <task id="LOCAL-00001" summary="adding new features">
       <created>1383951723430</created>
@@ -656,7 +644,14 @@
       <option name="project" value="LOCAL" />
       <updated>1419025223523</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update project">
+      <created>1500738313568</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1500738313568</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -692,7 +687,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5497000" />
+    <option name="totallyTimeSpent" value="5520000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -797,7 +792,8 @@
     <MESSAGE value="bug fixes" />
     <MESSAGE value="Reflects changes in recent google translate service." />
     <MESSAGE value="Bug fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fix" />
+    <MESSAGE value="update project" />
+    <option name="LAST_COMMIT_MESSAGE" value="update project" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
