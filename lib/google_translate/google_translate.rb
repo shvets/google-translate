@@ -11,7 +11,7 @@ class GoogleTranslate
   GOOGLE_SPEECH_SERVICE_URL    = "http://translate.google.com/translate_tts"
 
   def supported_languages
-    response = call_service GOOGLE_TRANSLATE_SERVICE_URL
+    response = call_service "https://#{GOOGLE_TRANSLATE_SERVICE_URL}"
 
     from_languages = collect_languages response.body, 0, 'sl', 'gt-sl'
     to_languages   = collect_languages response.body, 1, 'tl', 'gt-tl'
@@ -66,7 +66,7 @@ class GoogleTranslate
 
     response = call_service url + "&q=#{text}"
 
-    response.body.split(',').collect { |s| s == '' ? "\"\"" : s }.join(",") # fix json object
+    response.body.gsub(/,(,)+/,',').split(',').collect { |s| s == '' ? "\"\"" : s }.join(",") # fix json object
   end
 
   def call_speech_service lang, text
